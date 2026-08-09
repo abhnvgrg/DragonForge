@@ -1,0 +1,120 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Results & Outputs
+results/
+*.csv
+*.json
+*.pkl
+*.pickle
+*.npy
+*.npz
+
+# Checkpoints & Models
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+checkpoints/
+models/
+
+# Data
+data/*.csv
+data/*.json
+data/*.txt
+data/*.pkl
+!data/README.md
+
+# Wandb
+wandb/
+*.wandb
+
+# Tensorboard
+runs/
+lightning_logs/
+
+# Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Distribution / Packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Type checking
+*.pyc
+*.pyo
+*.pyd
+
+# Reference files
+README_BDH_pathways.txt
+DragonForge — Repo Structure & Te.txt
+structure.txt
