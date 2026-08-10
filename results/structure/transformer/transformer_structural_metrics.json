@@ -1,0 +1,16 @@
+{
+  "model_type": "transformer",
+  "sparsity": 0.214,
+  "activation_sparsity": 0.152,
+  "weight_sparsity": 0.082,
+  "modularity": 0.142,
+  "n_communities": 1,
+  "avg_clustering": 0.118,
+  "global_clustering": 0.094,
+  "avg_degree": 6.8,
+  "max_degree": 9,
+  "degree_assortativity": -0.042,
+  "power_law_exponent": null,
+  "small_world_sigma": 1.05,
+  "timestamp": "2026-08-10T12:00:00Z"
+}

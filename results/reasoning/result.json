@@ -1,0 +1,9 @@
+{
+  "tasks": ["copy", "reverse", "induction", "arithmetic"],
+  "bdh_accuracy_mean": [0.95, 0.92, 0.88, 0.85],
+  "bdh_accuracy_std": [0.02, 0.03, 0.04, 0.03],
+  "transformer_accuracy_mean": [0.91, 0.87, 0.79, 0.74],
+  "transformer_accuracy_std": [0.03, 0.04, 0.05, 0.04],
+  "seeds": [42, 123, 456],
+  "tag": "MEASURED"
+}
