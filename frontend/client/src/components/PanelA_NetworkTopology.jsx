@@ -444,7 +444,7 @@ export function PanelA_NetworkTopology({
               </span>
             </label>
             <span className="text-tiny font-mono font-medium text-dragonforge-textPrimary">
-              {showControl ? 'Transformer Baseline' : 'BDH (DragonForge)'}
+              {showControl ? 'Transformer Baseline' : 'BDH (NeuroLens)'}
             </span>
           </div>
         </div>
@@ -461,7 +461,7 @@ export function PanelA_NetworkTopology({
           />
 
           {/* Floating On-Canvas Controls (Top-Left) */}
-          <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-dragonforge-surface/90 backdrop-blur-md border border-dragonforge-border rounded-md p-1 shadow-lg z-10">
+          <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-[#18181B]/95 backdrop-blur-sm border border-dragonforge-border rounded-md p-1 shadow-lg z-10">
             <button
               onClick={handleZoomIn}
               className="p-1.5 rounded hover:bg-white/10 text-dragonforge-textSecondary hover:text-white transition-colors"
@@ -503,7 +503,7 @@ export function PanelA_NetworkTopology({
           </div>
 
           {/* Floating Filter Controls (Top-Right) */}
-          <div className="absolute top-3 right-3 flex items-center gap-2 bg-dragonforge-surface/90 backdrop-blur-md border border-dragonforge-border rounded-md px-3 py-1.5 shadow-lg z-10 text-tiny font-mono">
+          <div className="absolute top-3 right-3 flex items-center gap-2 bg-[#18181B]/95 backdrop-blur-sm border border-dragonforge-border rounded-md px-3 py-1.5 shadow-lg z-10 text-tiny font-mono">
             <Sliders className="w-3.5 h-3.5 text-cyan-400" />
             <span className="text-dragonforge-textMuted">τ Threshold:</span>
             <input
@@ -521,7 +521,7 @@ export function PanelA_NetworkTopology({
           {/* Interactive Floating Hover Tooltip */}
           {tooltip.visible && tooltip.node && (
             <div
-              className="absolute pointer-events-none z-30 bg-dragonforge-surface/95 backdrop-blur-md border border-dragonforge-border rounded-panel p-2.5 shadow-2xl text-tiny font-mono"
+              className="absolute pointer-events-none z-30 bg-[#18181B]/98 backdrop-blur-sm border border-dragonforge-border rounded-panel p-2.5 shadow-2xl text-tiny font-mono"
               style={{
                 left: Math.min(tooltip.x + 12, (dimensions.width || 400) - 180),
                 top: Math.min(tooltip.y + 12, (dimensions.height || 400) - 130),
@@ -544,7 +544,7 @@ export function PanelA_NetworkTopology({
           )}
 
           {/* Community Legend (Bottom-Left) */}
-          <div className="absolute bottom-3 left-3 flex flex-col gap-1.5 bg-dragonforge-surface/90 backdrop-blur-md border border-dragonforge-border rounded-md p-2.5 text-tiny z-10">
+          <div className="absolute bottom-3 left-3 flex flex-col gap-1.5 bg-[#18181B]/95 backdrop-blur-sm border border-dragonforge-border rounded-md p-2.5 text-tiny z-10">
             <span className="font-mono text-[10px] text-dragonforge-textMuted uppercase tracking-wider font-semibold">
               Communities ({communities.length})
             </span>
@@ -581,7 +581,7 @@ export function PanelA_NetworkTopology({
         </div>
 
         {/* Sidebar: Metrics & Selected Node Inspector */}
-        <div className="w-80 border-l border-dragonforge-border bg-dragonforge-surface/40 backdrop-blur-sm p-4 overflow-y-auto flex flex-col gap-4 flex-shrink-0">
+        <div className="w-80 border-l border-dragonforge-border bg-[#18181B]/92 backdrop-blur-sm p-4 overflow-y-auto flex flex-col gap-4 flex-shrink-0">
           {/* Selected Node Details Drawer */}
           {selectedNode ? (
             <div className="bg-cyan-950/20 border border-cyan-500/30 rounded-panel p-3.5 space-y-3">
