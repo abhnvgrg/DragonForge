@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-dragonforge-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-dragonforge-bg text-dragonforge-textPrimary font-sans;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-dragonforge-bg;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-dragonforge-border rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-dragonforge-borderHover;
+  }
+}
+
+@layer components {
+  /* Panel base style */
+  .panel {
+    @apply bg-dragonforge-surface border border-dragonforge-border rounded-panel p-panel shadow-panel transition-shadow duration-200;
+  }
+  
+  .panel:hover {
+    @apply shadow-panel-hover;
+  }
+  
+  /* Panel header */
+  .panel-header {
+    @apply flex items-center justify-between mb-4 pb-3 border-b border-dragonforge-border;
+  }
+  
+  .panel-title {
+    @apply font-mono text-title font-medium text-dragonforge-textPrimary;
+  }
+  
+  .panel-subtitle {
+    @apply text-small text-dragonforge-textSecondary font-normal;
+  }
+  
+  /* Badge styles */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-badge text-tiny font-medium font-mono;
+  }
+  
+  .badge-established {
+    @apply bg-dragonforge-badgeEstablished text-dragonforge-badgeEstablishedText;
+  }
+  
+  .badge-measured {
+    @apply bg-dragonforge-badgeMeasured text-dragonforge-badgeMeasuredText;
+  }
+  
+  .badge-exploratory {
+    @apply bg-dragonforge-badgeExploratory border border-dragonforge-badgeExploratoryBorder border-dashed text-dragonforge-textPrimary;
+  }
+  
+  /* Metric card */
+  .metric-card {
+    @apply flex flex-col gap-1;
+  }
+  
+  .metric-label {
+    @apply text-tiny text-dragonforge-textMuted font-medium uppercase tracking-wide;
+  }
+  
+  .metric-value {
+    @apply text-headline font-mono font-semibold text-dragonforge-textPrimary;
+  }
+  
+  .metric-diff {
+    @apply text-small font-mono;
+  }
+  
+  .metric-diff-positive {
+    @apply text-green-400;
+  }
+  
+  .metric-diff-negative {
+    @apply text-red-400;
+  }
+  
+  .metric-diff-neutral {
+    @apply text-dragonforge-textSecondary;
+  }
+  
+  /* Table styles */
+  .data-table {
+    @apply w-full border-collapse text-small;
+  }
+  
+  .data-table th {
+    @apply text-left py-2 px-3 font-medium text-dragonforge-textSecondary border-b border-dragonforge-border uppercase tracking-wide text-tiny;
+  }
+  
+  .data-table td {
+    @apply py-2 px-3 border-b border-dragonforge-border/50;
+  }
+  
+  .data-table tr:last-child td {
+    @apply border-b-0;
+  }
+  
+  .data-table tbody tr:hover {
+    @apply bg-dragonforge-surfaceHover;
+  }
+  
+  .data-table .mono {
+    @apply font-mono;
+  }
+  
+  /* Button styles */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-panel text-small font-medium transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-dragonforge-borderHover focus:ring-offset-2 focus:ring-offset-dragonforge-bg;
+  }
+  
+  .btn-primary {
+    @apply btn bg-dragonforge-textPrimary text-dragonforge-bg hover:bg-dragonforge-textSecondary;
+  }
+  
+  .btn-secondary {
+    @apply btn border border-dragonforge-border bg-transparent text-dragonforge-textPrimary hover:bg-dragonforge-surfaceHover;
+  }
+  
+  .btn-ghost {
+    @apply btn bg-transparent text-dragonforge-textSecondary hover:text-dragonforge-textPrimary;
+  }
+  
+  /* Toggle switch */
+  .toggle {
+    @apply relative inline-flex h-6 w-11 items-center rounded-full transition-colors cursor-pointer;
+  }
+  
+  .toggle input {
+    @apply sr-only;
+  }
+  
+  .toggle-track {
+    @apply h-4 w-8 rounded-full bg-dragonforge-border transition-colors;
+  }
+  
+  .toggle-thumb {
+    @apply h-3.5 w-3.5 rounded-full bg-dragonforge-textPrimary shadow-panel transition-transform duration-150;
+  }
+  
+  .toggle input:checked + .toggle-track {
+    @apply bg-dragonforge-textPrimary;
+  }
+  
+  .toggle input:checked + .toggle-track .toggle-thumb {
+    @apply transform translate-x-5 bg-dragonforge-bg;
+  }
+  
+  /* Collapsible */
+  .collapsible {
+    @apply overflow-hidden transition-all duration-300 ease-out;
+  }
+  
+  .collapsible-content {
+    @apply overflow-hidden;
+  }
+  
+  /* Tooltip */
+  .tooltip {
+    @apply absolute z-50 px-3 py-2 text-tiny font-mono bg-dragonforge-surface border border-dragonforge-border rounded-panel shadow-panel pointer-events-none;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* Recharts customization */
+.recharts-tooltip-wrapper {
+  outline: none !important;
+}
+
+.recharts-default-tooltip {
+  @apply bg-dragonforge-surface border border-dragonforge-border rounded-panel shadow-panel p-3 !important;
+}
+
+.recharts-tooltip-label {
+  @apply text-tiny text-dragonforge-textMuted font-medium uppercase tracking-wide !important;
+}
+
+.recharts-tooltip-item {
+  @apply text-small font-mono text-dragonforge-textPrimary !important;
+}
+
+.recharts-legend-item-text {
+  @apply text-small text-dragonforge-textSecondary !important;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  @apply stroke-dragonforge-border/50 !important;
+}
+
+.recharts-cartesian-axis-tick line {
+  @apply stroke-dragonforge-border !important;
+}
+
+.recharts-cartesian-axis-tick text {
+  @apply fill-dragonforge-textMuted text-tiny !important;
+}
+
+.recharts-reference-line line {
+  @apply stroke-dragonforge-border/30 !important;
+  stroke-dasharray: 4 4;
+}
