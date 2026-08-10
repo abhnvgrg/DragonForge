@@ -1,12 +1,12 @@
-import { Brain, Settings, Download, ChevronDown } from 'lucide-react';
+import { Brain, Settings, Download } from 'lucide-react';
 import { useState } from 'react';
 
 export function TopNav({ modelConfig, onExport }) {
   const [showControls, setShowControls] = useState(false);
 
   return (
-    <header className="border-b border-dragonforge-border bg-dragonforge-surface/50 backdrop-blur-sm sticky top-0 z-40">
-      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="border-b border-dragonforge-border bg-dragonforge-bg/95 backdrop-blur-md sticky top-0 z-40 shadow-sm">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 gap-4 flex-wrap">
           {/* Left: Title */}
           <div className="flex items-center gap-3 flex-shrink-0">
@@ -28,7 +28,7 @@ export function TopNav({ modelConfig, onExport }) {
               Model Checkpoint: bdh_small_v1 (10M params)
             </span>
             <span className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-dragonforge-textPrimary animate-pulse" aria-hidden="true" />
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
               Status: Instrumented
             </span>
           </div>
@@ -68,7 +68,7 @@ export function TopNav({ modelConfig, onExport }) {
 
         {/* Mobile controls dropdown */}
         {showControls && (
-          <div id="mobile-controls" className="sm:hidden py-3 border-t border-dragonforge-border animate-slide-up">
+          <div id="mobile-controls" className="sm:hidden py-3 border-t border-dragonforge-border bg-dragonforge-bg/95 animate-slide-up">
             <div className="flex flex-col gap-3 text-small font-mono">
               <div className="flex items-center justify-between">
                 <span className="text-dragonforge-textSecondary">Control Baseline</span>
