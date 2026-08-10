@@ -115,7 +115,7 @@ dmypy.json
 *.pyd
 
 # Reference files
-README_BDH_pathways.txt
+README_BDH_pathways.md
 DragonForge — Repo Structure & Te.txt
 structure.txt
 test_findings.md
