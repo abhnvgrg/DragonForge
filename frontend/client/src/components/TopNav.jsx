@@ -13,7 +13,7 @@ export function TopNav({ modelConfig, onExport }) {
             <Brain className="w-6 h-6 text-dragonforge-textPrimary" aria-hidden="true" />
             <div>
               <h1 className="font-mono text-headline font-bold text-dragonforge-textPrimary tracking-tight">
-                DRAGONFORGE
+                NEUROLENS
               </h1>
               <p className="font-mono text-tiny text-dragonforge-textSecondary">
                 BDH Model Internals & Behavioral Investigator

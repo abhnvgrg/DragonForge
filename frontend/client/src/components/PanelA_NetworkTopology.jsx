@@ -444,7 +444,7 @@ export function PanelA_NetworkTopology({
               </span>
             </label>
             <span className="text-tiny font-mono font-medium text-dragonforge-textPrimary">
-              {showControl ? 'Transformer Baseline' : 'BDH (DragonForge)'}
+              {showControl ? 'Transformer Baseline' : 'BDH (NeuroLens)'}
             </span>
           </div>
         </div>

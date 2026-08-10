@@ -94,7 +94,7 @@ export function PanelD_ContinualLearning({ continualData }) {
             <div className="flex items-center justify-between mb-2.5">
               <h3 className="font-mono text-small font-medium text-dragonforge-textPrimary flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                BDH (DragonForge)
+                BDH (NeuroLens)
               </h3>
               <ClaimBadge tag={tag} className="text-tiny" />
             </div>
