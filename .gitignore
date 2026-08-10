@@ -46,6 +46,9 @@ logs/
 results/
 *.csv
 *.json
+!package.json
+!package-lock.json
+!tsconfig.json
 *.pkl
 *.pickle
 *.npy
