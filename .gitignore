@@ -43,12 +43,13 @@ Thumbs.db
 logs/
 
 # Results & Outputs
-results/
 *.csv
 *.json
 !package.json
 !package-lock.json
 !tsconfig.json
+!results/
+!results/**
 *.pkl
 *.pickle
 *.npy

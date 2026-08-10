@@ -1,0 +1,16 @@
+{
+  "model_type": "bdh",
+  "sparsity": 0.852,
+  "activation_sparsity": 0.784,
+  "weight_sparsity": 0.891,
+  "modularity": 0.648,
+  "n_communities": 3,
+  "avg_clustering": 0.384,
+  "global_clustering": 0.312,
+  "avg_degree": 2.4,
+  "max_degree": 5,
+  "degree_assortativity": 0.182,
+  "power_law_exponent": 2.14,
+  "small_world_sigma": 2.84,
+  "timestamp": "2026-08-10T12:00:00Z"
+}

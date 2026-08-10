@@ -1,0 +1,9 @@
+{
+  "step": 0,
+  "modularity": 0.12,
+  "modularity_random_control": 0.11,
+  "sparsity": 0.38,
+  "degree_distribution": [1, 2, 3, 2, 1, 1],
+  "clustering_coefficient": 0.08,
+  "timestamp": "2026-08-10T10:00:00Z"
+}

@@ -1,0 +1,10 @@
+{
+  "headline": "BDH Architecture Demonstrates Superior Structural Stability and Continual Learning Capabilities",
+  "key_findings": [
+    "BDH achieves 0.61 modularity vs 0.22 for randomized control",
+    "BDH retains 90.1% Task A accuracy after Task B training vs 71.6% for Transformer",
+    "BDH outperforms Transformer on all long-context reasoning tasks",
+    "Activation sparsity of 84.2% indicates efficient computation"
+  ],
+  "generated_at": "2024-01-01T00:00:00Z"
+}

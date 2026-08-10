@@ -1,0 +1,36 @@
+{
+  "nodes": [
+    "trans_0_0", "trans_0_1", "trans_0_2", "trans_0_3", "trans_0_4", "trans_0_5",
+    "trans_1_0", "trans_1_1", "trans_1_2", "trans_1_3", "trans_1_4", "trans_1_5",
+    "trans_2_0", "trans_2_1", "trans_2_2", "trans_2_3", "trans_2_4", "trans_2_5"
+  ],
+  "edges": [
+    ["trans_0_0", "trans_0_1", 0.42], ["trans_0_0", "trans_1_0", 0.38], ["trans_0_0", "trans_2_0", 0.35],
+    ["trans_0_1", "trans_0_2", 0.40], ["trans_0_1", "trans_1_1", 0.36], ["trans_0_2", "trans_0_3", 0.44],
+    ["trans_0_3", "trans_1_3", 0.39], ["trans_0_4", "trans_0_5", 0.41], ["trans_0_5", "trans_2_5", 0.37],
+    ["trans_1_0", "trans_1_1", 0.45], ["trans_1_1", "trans_1_2", 0.38], ["trans_1_2", "trans_1_3", 0.43],
+    ["trans_1_3", "trans_1_4", 0.39], ["trans_1_4", "trans_1_5", 0.40], ["trans_1_5", "trans_2_1", 0.36],
+    ["trans_2_0", "trans_2_1", 0.41], ["trans_2_1", "trans_2_2", 0.43], ["trans_2_2", "trans_2_3", 0.38],
+    ["trans_2_3", "trans_2_4", 0.40], ["trans_2_4", "trans_2_5", 0.42], ["trans_2_5", "trans_0_4", 0.35]
+  ],
+  "node_metadata": {
+    "trans_0_0": { "community": 0, "layer": "layer_0", "degree": 3, "activation": 0.45 },
+    "trans_0_1": { "community": 0, "layer": "layer_0", "degree": 3, "activation": 0.41 },
+    "trans_0_2": { "community": 0, "layer": "layer_0", "degree": 2, "activation": 0.48 },
+    "trans_0_3": { "community": 0, "layer": "layer_0", "degree": 2, "activation": 0.39 },
+    "trans_0_4": { "community": 0, "layer": "layer_0", "degree": 2, "activation": 0.43 },
+    "trans_0_5": { "community": 0, "layer": "layer_0", "degree": 2, "activation": 0.37 },
+    "trans_1_0": { "community": 0, "layer": "layer_1", "degree": 2, "activation": 0.46 },
+    "trans_1_1": { "community": 0, "layer": "layer_1", "degree": 3, "activation": 0.42 },
+    "trans_1_2": { "community": 0, "layer": "layer_1", "degree": 2, "activation": 0.44 },
+    "trans_1_3": { "community": 0, "layer": "layer_1", "degree": 3, "activation": 0.40 },
+    "trans_1_4": { "community": 0, "layer": "layer_1", "degree": 2, "activation": 0.41 },
+    "trans_1_5": { "community": 0, "layer": "layer_1", "degree": 2, "activation": 0.38 },
+    "trans_2_0": { "community": 0, "layer": "layer_2", "degree": 2, "activation": 0.42 },
+    "trans_2_1": { "community": 0, "layer": "layer_2", "degree": 3, "activation": 0.45 },
+    "trans_2_2": { "community": 0, "layer": "layer_2", "degree": 2, "activation": 0.39 },
+    "trans_2_3": { "community": 0, "layer": "layer_2", "degree": 2, "activation": 0.40 },
+    "trans_2_4": { "community": 0, "layer": "layer_2", "degree": 2, "activation": 0.43 },
+    "trans_2_5": { "community": 0, "layer": "layer_2", "degree": 3, "activation": 0.36 }
+  }
+}
