@@ -1,5 +1,14 @@
 import { useState } from 'react';
-import { useLatestStructureCheckpoint, useStructureGraph, useStructureComparison, useContinualLearning, useReasoning, useReasoningComparison, useModelConfig } from './hooks/useData';
+import {
+  useLatestStructureCheckpoint,
+  useStructureCheckpoints,
+  useStructureGraph,
+  useStructureComparison,
+  useContinualLearning,
+  useReasoning,
+  useReasoningComparison,
+  useModelConfig
+} from './hooks/useData';
 import { TopNav } from './components/TopNav';
 import { PanelA_NetworkTopology } from './components/PanelA_NetworkTopology';
 import { PanelB_TrainingEvolution } from './components/PanelB_TrainingEvolution';
@@ -7,7 +16,7 @@ import { PanelC_ReasoningBenchmark } from './components/PanelC_ReasoningBenchmar
 import { PanelD_ContinualLearning } from './components/PanelD_ContinualLearning';
 import { PanelE_StructureBehavior } from './components/PanelE_StructureBehavior';
 import { BottomBanner } from './components/BottomBanner';
-import { AlertCircle, RefreshCw } from 'lucide-react';
+import { RefreshCw } from 'lucide-react';
 
 export default function App() {
   const [showControl, setShowControl] = useState(false);
@@ -15,6 +24,7 @@ export default function App() {
 
   // Load data using custom hooks
   const { data: checkpoint, loading: latestLoading, error: latestError, refetch: refetchLatest } = useLatestStructureCheckpoint();
+  const { data: checkpointsData, loading: checkpointsLoading, error: checkpointsError, refetch: refetchCheckpoints } = useStructureCheckpoints();
   const { data: bdhGraph, loading: graphLoading, error: graphError, refetch: refetchBdhGraph } = useStructureGraph('bdh');
   const { data: controlGraph, loading: controlGraphLoading, error: controlGraphError, refetch: refetchControlGraph } = useStructureGraph('transformer');
   const { data: comparison, loading: compLoading, error: compError, refetch: refetchComp } = useStructureComparison();
@@ -26,6 +36,7 @@ export default function App() {
   const handleRefresh = async () => {
     await Promise.all([
       refetchLatest(),
+      refetchCheckpoints(),
       refetchBdhGraph(),
       refetchControlGraph(),
       refetchComp(),
@@ -38,6 +49,7 @@ export default function App() {
   const handleExportData = () => {
     const dataToExport = {
       checkpoint,
+      checkpoints: checkpointsData,
       bdhGraph,
       controlGraph,
       comparison,
@@ -138,7 +150,7 @@ export default function App() {
           {activeTab === 'track' && (
             <div className="animate-fade-in">
               <PanelB_TrainingEvolution
-                structureCheckpoints={{ checkpoints: checkpoint ? [checkpoint] : [] }}
+                structureCheckpoints={checkpointsData}
               />
             </div>
           )}
