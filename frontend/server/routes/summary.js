@@ -1,35 +1,38 @@
-import fs from 'fs';
+import express from 'express';
 import path from 'path';
+import { fileCache } from '../utils/cache.js';
 
 export default function summaryRoutes(resultsDir) {
-  const router = (req, res, next) => {
-    router.handle(req, res, next);
-  };
+  const router = express.Router();
+  const summaryPath = path.join(resultsDir, 'summary.json');
 
-  router.handle = (req, res, next) => {
-    const summaryPath = path.join(resultsDir, 'summary.json');
-    
-    if (req.path === '/' || req.path === '') {
-      // GET /api/summary - return summary
-      if (fs.existsSync(summaryPath)) {
-        const content = fs.readFileSync(summaryPath, 'utf-8');
-        res.json(JSON.parse(content));
+  // GET /api/summary - return summary
+  router.get('/', async (req, res, next) => {
+    try {
+      const data = await fileCache.readJson(summaryPath);
+      if (data !== null) {
+        res.json(data);
       } else {
         res.status(404).json({ error: 'Summary not found' });
       }
-    } else if (req.path === '/headline') {
-      // GET /api/summary/headline - return just the headline
-      if (fs.existsSync(summaryPath)) {
-        const content = fs.readFileSync(summaryPath, 'utf-8');
-        const data = JSON.parse(content);
+    } catch (err) {
+      next(err);
+    }
+  });
+
+  // GET /api/summary/headline - return just the headline
+  router.get('/headline', async (req, res, next) => {
+    try {
+      const data = await fileCache.readJson(summaryPath);
+      if (data !== null) {
         res.json({ headline: data.headline });
       } else {
         res.status(404).json({ error: 'Summary not found' });
       }
-    } else {
-      next();
+    } catch (err) {
+      next(err);
     }
-  };
+  });
 
   return router;
 }

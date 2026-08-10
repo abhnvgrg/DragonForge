@@ -1,5 +1,5 @@
 // Custom hooks for data fetching with loading/error states
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { api } from '../utils/api';
 import type {
   StructureCheckpoint,
@@ -24,22 +24,54 @@ function useFetch<T>(fetchFn: () => Promise<T>, deps: unknown[] = []): UseDataRe
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
+  // Keep a ref to the latest fetchFn so inline functions don't trigger re-fetch loops
+  const fetchFnRef = useRef(fetchFn);
+  useEffect(() => {
+    fetchFnRef.current = fetchFn;
+  });
+
   const fetchData = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
-      const result = await fetchFn();
+      const result = await fetchFnRef.current();
       setData(result);
     } catch (err) {
       setError(err instanceof Error ? err : new Error('Unknown error'));
     } finally {
       setLoading(false);
     }
-  }, [fetchFn]);
+  }, []);
 
   useEffect(() => {
-    fetchData();
-  }, [fetchData, ...deps]);
+    let isCancelled = false;
+
+    const execute = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const result = await fetchFnRef.current();
+        if (!isCancelled) {
+          setData(result);
+        }
+      } catch (err) {
+        if (!isCancelled) {
+          setError(err instanceof Error ? err : new Error('Unknown error'));
+        }
+      } finally {
+        if (!isCancelled) {
+          setLoading(false);
+        }
+      }
+    };
+
+    execute();
+
+    return () => {
+      isCancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, deps);
 
   return { data, loading, error, refetch: fetchData };
 }

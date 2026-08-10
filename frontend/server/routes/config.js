@@ -1,47 +1,53 @@
-import fs from 'fs';
-import path from 'path';
-import yaml from 'js-yaml';
+import express from 'express';
+import { fileCache } from '../utils/cache.js';
 
 export default function configRoutes(configPath) {
-  const router = (req, res, next) => {
-    router.handle(req, res, next);
-  };
+  const router = express.Router();
 
-  router.handle = (req, res, next) => {
-    if (req.path === '/' || req.path === '') {
-      // GET /api/config - return full config
-      if (fs.existsSync(configPath)) {
-        const content = fs.readFileSync(configPath, 'utf-8');
-        const config = yaml.load(content);
+  // GET /api/config - return full config
+  router.get('/', async (req, res, next) => {
+    try {
+      const config = await fileCache.readYaml(configPath);
+      if (config !== null) {
         res.json(config);
       } else {
-        res.status(404).json({ error: 'Config not found' });
+        res.status(404).json({ error: 'Config not found or could not be parsed' });
       }
-    } else if (req.path === '/model') {
-      // GET /api/config/model - return model config for display
-      if (fs.existsSync(configPath)) {
-        const content = fs.readFileSync(configPath, 'utf-8');
-        const config = yaml.load(content);
+    } catch (err) {
+      next(err);
+    }
+  });
+
+  // GET /api/config/model - return model config for display
+  router.get('/model', async (req, res, next) => {
+    try {
+      const config = await fileCache.readYaml(configPath);
+      if (config !== null) {
         res.json({
           bdh: config.model?.bdh,
           transformer: config.model?.transformer
         });
       } else {
-        res.status(404).json({ error: 'Config not found' });
+        res.status(404).json({ error: 'Config not found or could not be parsed' });
       }
-    } else if (req.path === '/instrumentation') {
-      // GET /api/config/instrumentation - return instrumentation config
-      if (fs.existsSync(configPath)) {
-        const content = fs.readFileSync(configPath, 'utf-8');
-        const config = yaml.load(content);
-        res.json(config.instrumentation);
-      } else {
-        res.status(404).json({ error: 'Config not found' });
-      }
-    } else {
-      next();
+    } catch (err) {
+      next(err);
     }
-  };
+  });
+
+  // GET /api/config/instrumentation - return instrumentation config
+  router.get('/instrumentation', async (req, res, next) => {
+    try {
+      const config = await fileCache.readYaml(configPath);
+      if (config !== null) {
+        res.json(config.instrumentation || {});
+      } else {
+        res.status(404).json({ error: 'Config not found or could not be parsed' });
+      }
+    } catch (err) {
+      next(err);
+    }
+  });
 
   return router;
 }
