@@ -1,15 +1,15 @@
-# DragonForge Changelog
+# NeuroLens Changelog
 
-All notable changes to the DragonForge project are documented here.
+All notable changes to the NeuroLens project are documented here.
 
 ## [1.0.0] - 2026-08-09 - Initial Project Structure
 
 ### Project Overview
-DragonForge is a research framework for instrumenting BDH (Dragon Hatchling) models to measure structural properties (sparsity, modularity, degree distribution) and connect them to behavioral outcomes in continual learning and long-context reasoning.
+NeuroLens is a research framework for instrumenting BDH (Dragon Hatchling) models to measure structural properties (sparsity, modularity, degree distribution) and connect them to behavioral outcomes in continual learning and long-context reasoning.
 
 ### Directory Structure Created
 ```
-dragonforge/
+neurolens/
 ├── README.md
 ├── CHANGELOG.md
 ├── TECHNICAL_DOCS.md

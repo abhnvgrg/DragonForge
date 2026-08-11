@@ -1,7 +1,7 @@
 """
 Run All Experiments
 
-Orchestrates the complete DragonForge experimental pipeline:
+Orchestrates the complete NeuroLens experimental pipeline:
 1. Structural instrumentation (graph extraction + metrics)
 2. Continual learning experiments
 3. Long-context reasoning experiments
@@ -132,7 +132,7 @@ class FullExperimentResults:
 
 class ExperimentRunner:
     """
-    Main orchestrator for DragonForge experiments.
+    Main orchestrator for NeuroLens experiments.
     """
     
     def __init__(self, config: ExperimentConfig):
@@ -181,7 +181,7 @@ class ExperimentRunner:
     def run_all(self) -> FullExperimentResults:
         """Run the complete experimental pipeline."""
         logger.info("=" * 60)
-        logger.info("Starting DragonForge Experiment Pipeline")
+        logger.info("Starting NeuroLens Experiment Pipeline")
         logger.info("=" * 60)
         
         # Load models
@@ -217,7 +217,7 @@ class ExperimentRunner:
         self._save_results()
         
         logger.info("\n" + "=" * 60)
-        logger.info("DragonForge Experiment Pipeline Complete!")
+        logger.info("NeuroLens Experiment Pipeline Complete!")
         logger.info("=" * 60)
         
         return self.results

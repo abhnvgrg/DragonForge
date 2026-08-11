@@ -47,36 +47,36 @@ export function PanelD_ContinualLearning({ continualData }) {
         {/* Flow Diagram */}
         <div className="flex items-center justify-center gap-4 mb-6 flex-wrap">
           <div className="text-center">
-            <div className="font-mono text-tiny text-dragonforge-textMuted mb-1">Task A</div>
-            <div className="bg-dragonforge-surface border border-dragonforge-border rounded-panel px-4 py-3 min-w-[120px]">
-              <div className="font-mono text-headline text-dragonforge-textPrimary">
+            <div className="font-mono text-tiny text-neurolens-textMuted mb-1">Task A</div>
+            <div className="bg-neurolens-surface border border-neurolens-border rounded-panel px-4 py-3 min-w-[120px]">
+              <div className="font-mono text-headline text-neurolens-textPrimary">
                 {(data.task_a_before * 100).toFixed(1)}%
               </div>
-              <div className="text-tiny text-dragonforge-textMuted">Initial Accuracy</div>
+              <div className="text-tiny text-neurolens-textMuted">Initial Accuracy</div>
             </div>
           </div>
           
-          <ArrowRight className="w-6 h-6 text-dragonforge-textMuted flex-shrink-0" />
+          <ArrowRight className="w-6 h-6 text-neurolens-textMuted flex-shrink-0" />
           
           <div className="text-center">
-            <div className="font-mono text-tiny text-dragonforge-textMuted mb-1">Task B</div>
-            <div className="bg-dragonforge-surface border border-dragonforge-border rounded-panel px-4 py-3 min-w-[120px]">
-              <div className="font-mono text-headline text-dragonforge-textPrimary">
+            <div className="font-mono text-tiny text-neurolens-textMuted mb-1">Task B</div>
+            <div className="bg-neurolens-surface border border-neurolens-border rounded-panel px-4 py-3 min-w-[120px]">
+              <div className="font-mono text-headline text-neurolens-textPrimary">
                 {(data.task_b_after * 100).toFixed(1)}%
               </div>
-              <div className="text-tiny text-dragonforge-textMuted">After Training</div>
+              <div className="text-tiny text-neurolens-textMuted">After Training</div>
             </div>
           </div>
           
-          <ArrowRight className="w-6 h-6 text-dragonforge-textMuted flex-shrink-0" />
+          <ArrowRight className="w-6 h-6 text-neurolens-textMuted flex-shrink-0" />
           
           <div className="text-center">
-            <div className="font-mono text-tiny text-dragonforge-textMuted mb-1">Re-test A</div>
-            <div className="bg-dragonforge-surface border border-dragonforge-border rounded-panel px-4 py-3 min-w-[120px]">
-              <div className="font-mono text-headline text-dragonforge-textPrimary">
+            <div className="font-mono text-tiny text-neurolens-textMuted mb-1">Re-test A</div>
+            <div className="bg-neurolens-surface border border-neurolens-border rounded-panel px-4 py-3 min-w-[120px]">
+              <div className="font-mono text-headline text-neurolens-textPrimary">
                 {(data.task_a_after * 100).toFixed(1)}%
               </div>
-              <div className="text-tiny text-dragonforge-textMuted">Post-Task B Accuracy</div>
+              <div className="text-tiny text-neurolens-textMuted">Post-Task B Accuracy</div>
             </div>
           </div>
         </div>
@@ -84,27 +84,27 @@ export function PanelD_ContinualLearning({ continualData }) {
         {/* Forgetting Comparison Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           {/* BDH Card */}
-          <div className="bg-dragonforge-bg/50 border border-dragonforge-border rounded-panel p-4">
+          <div className="bg-neurolens-bg/50 border border-neurolens-border rounded-panel p-4">
             <div className="flex items-center justify-between mb-3">
-              <h3 className="font-mono text-small font-medium text-dragonforge-textPrimary">BDH (Dragon Hatchling)</h3>
+              <h3 className="font-mono text-small font-medium text-neurolens-textPrimary">BDH (Dragon Hatchling)</h3>
               <ClaimBadge tag={tag} className="text-tiny" />
             </div>
             <div className="space-y-3">
               <div className="flex justify-between text-small">
-                <span className="text-dragonforge-textSecondary">Task A Initial</span>
-                <span className="font-mono font-semibold text-dragonforge-textPrimary">
+                <span className="text-neurolens-textSecondary">Task A Initial</span>
+                <span className="font-mono font-semibold text-neurolens-textPrimary">
                   {(data.task_a_before * 100).toFixed(1)}%
                 </span>
               </div>
               <div className="flex justify-between text-small">
-                <span className="text-dragonforge-textSecondary">Task A Post-Task B</span>
-                <span className="font-mono font-semibold text-dragonforge-textPrimary">
+                <span className="text-neurolens-textSecondary">Task A Post-Task B</span>
+                <span className="font-mono font-semibold text-neurolens-textPrimary">
                   {(data.task_a_after * 100).toFixed(1)}%
                 </span>
               </div>
-              <div className="flex justify-between text-small border-t border-dragonforge-border pt-3">
-                <span className="text-dragonforge-textSecondary font-medium">Retention</span>
-                <span className="font-mono font-semibold text-dragonforge-textPrimary">
+              <div className="flex justify-between text-small border-t border-neurolens-border pt-3">
+                <span className="text-neurolens-textSecondary font-medium">Retention</span>
+                <span className="font-mono font-semibold text-neurolens-textPrimary">
                   {bdhRetention}%
                 </span>
               </div>
@@ -121,27 +121,27 @@ export function PanelD_ContinualLearning({ continualData }) {
           </div>
           
           {/* Transformer Baseline Card */}
-          <div className="bg-dragonforge-bg/50 border border-dragonforge-border rounded-panel p-4">
+          <div className="bg-neurolens-bg/50 border border-neurolens-border rounded-panel p-4">
             <div className="flex items-center justify-between mb-3">
-              <h3 className="font-mono text-small font-medium text-dragonforge-textSecondary">Transformer Baseline</h3>
+              <h3 className="font-mono text-small font-medium text-neurolens-textSecondary">Transformer Baseline</h3>
               <ClaimBadge tag="MEASURED" className="text-tiny" />
             </div>
             <div className="space-y-3">
               <div className="flex justify-between text-small">
-                <span className="text-dragonforge-textSecondary">Task A Initial</span>
-                <span className="font-mono font-semibold text-dragonforge-textSecondary">
+                <span className="text-neurolens-textSecondary">Task A Initial</span>
+                <span className="font-mono font-semibold text-neurolens-textSecondary">
                   {(data.baseline_transformer?.task_a_before * 100 || 81).toFixed(1)}%
                 </span>
               </div>
               <div className="flex justify-between text-small">
-                <span className="text-dragonforge-textSecondary">Task A Post-Task B</span>
-                <span className="font-mono font-semibold text-dragonforge-textSecondary">
+                <span className="text-neurolens-textSecondary">Task A Post-Task B</span>
+                <span className="font-mono font-semibold text-neurolens-textSecondary">
                   {(data.baseline_transformer?.task_a_after * 100 || 58).toFixed(1)}%
                 </span>
               </div>
-              <div className="flex justify-between text-small border-t border-dragonforge-border pt-3">
-                <span className="text-dragonforge-textSecondary font-medium">Retention</span>
-                <span className="font-mono font-semibold text-dragonforge-textSecondary">
+              <div className="flex justify-between text-small border-t border-neurolens-border pt-3">
+                <span className="text-neurolens-textSecondary font-medium">Retention</span>
+                <span className="font-mono font-semibold text-neurolens-textSecondary">
                   {transRetention}%
                 </span>
               </div>
@@ -159,15 +159,15 @@ export function PanelD_ContinualLearning({ continualData }) {
         </div>
         
         {/* Delta Summary */}
-        <div className="bg-dragonforge-bg/30 border border-dragonforge-border/50 rounded-panel p-4">
+        <div className="bg-neurolens-bg/30 border border-neurolens-border/50 rounded-panel p-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <Minus className="w-5 h-5 text-dragonforge-textMuted" />
+              <Minus className="w-5 h-5 text-neurolens-textMuted" />
               <div>
-                <p className="font-mono text-small text-dragonforge-textPrimary">
+                <p className="font-mono text-small text-neurolens-textPrimary">
                   Forgetting Delta: BDH <span className="text-green-400">outperforms</span> Transformer by <span className="font-bold">{(transForgetting - bdhForgetting).toFixed(1)}%</span>
                 </p>
-                <p className="text-tiny text-dragonforge-textMuted">
+                <p className="text-tiny text-neurolens-textMuted">
                   Lower forgetting indicates better structural stability for continual learning
                 </p>
               </div>
@@ -176,13 +176,13 @@ export function PanelD_ContinualLearning({ continualData }) {
               <p className="font-mono text-headline text-green-400">
                 {(transForgetting - bdhForgetting).toFixed(1)}%
               </p>
-              <p className="text-tiny text-dragonforge-textMuted">Advantage</p>
+              <p className="text-tiny text-neurolens-textMuted">Advantage</p>
             </div>
           </div>
         </div>
         
         {!hasData && (
-          <div className="mt-4 p-3 bg-dragonforge-bg/50 border border-dragonforge-border/50 rounded-panel text-tiny text-dragonforge-textMuted">
+          <div className="mt-4 p-3 bg-neurolens-bg/50 border border-neurolens-border/50 rounded-panel text-tiny text-neurolens-textMuted">
             <span className="font-mono">[EXPLORATORY] </span>
             Showing representative continual learning data. Run continual learning experiments to generate real results.
           </div>

@@ -1,4 +1,4 @@
-# DragonForge
+# NeuroLens
 
 **One-sentence claim:**  
 We instrument a real small BDH (Dragon Hatchling) model, measure its internal interaction structure, and connect those measurements to controlled experiments on continual learning and long-context reasoning.
@@ -7,7 +7,7 @@ We instrument a real small BDH (Dragon Hatchling) model, measure its internal in
 
 BDH makes distinctive claims about sparse, structured neural computation and its relationship to reasoning and continual learning. Most public discussion of these claims remains high-level.  
 
-**DragonForge asks:**  
+**NeuroLens asks:**  
 Can we take a real (small) BDH model, open it up, measure the structural properties it claims, and test whether those properties coincide with interesting behavioral outcomes?
 
 ## Architecture / Evaluation Flow
@@ -123,4 +123,4 @@ Similar or worse behavioral metrics despite the claimed structural properties ap
 
 ---
 
-DragonForge turns BDH's structural claims into measurable experiments and makes the investigation visible.
+NeuroLens turns BDH's structural claims into measurable experiments and makes the investigation visible.

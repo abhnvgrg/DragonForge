@@ -1,4 +1,4 @@
-// API Client for DragonForge Backend
+// API Client for NeuroLens Backend
 
 import type {
   StructureCheckpoint,

@@ -1,4 +1,4 @@
-// DragonForge Shared Type Definitions
+// NeuroLens Shared Type Definitions
 // Matches the JSON contracts from results/ directory
 
 // ===== Structure Types =====

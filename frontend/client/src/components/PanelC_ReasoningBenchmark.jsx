@@ -66,16 +66,16 @@ export function PanelC_ReasoningBenchmark({ reasoningData, reasoningComparison }
           <tbody>
             {allData.map((row, i) => (
               <tr key={i}>
-                <td className="font-medium text-dragonforge-textPrimary">
+                <td className="font-medium text-neurolens-textPrimary">
                   {row.model}
                 </td>
-                <td className="font-mono text-dragonforge-textSecondary">
+                <td className="font-mono text-neurolens-textSecondary">
                   {row.contextLength}
                 </td>
-                <td className="mono font-semibold text-dragonforge-textPrimary">
+                <td className="mono font-semibold text-neurolens-textPrimary">
                   {row.accuracy}
                 </td>
-                <td className="mono text-dragonforge-textSecondary">
+                <td className="mono text-neurolens-textSecondary">
                   {row.latency}
                 </td>
               </tr>
@@ -86,28 +86,28 @@ export function PanelC_ReasoningBenchmark({ reasoningData, reasoningComparison }
       
       {/* Task breakdown */}
       {reasoningComparison?.tasks?.length && (
-        <div className="mt-4 pt-4 border-t border-dragonforge-border">
-          <h3 className="font-mono text-small font-medium text-dragonforge-textSecondary mb-3 uppercase tracking-wide">
+        <div className="mt-4 pt-4 border-t border-neurolens-border">
+          <h3 className="font-mono text-small font-medium text-neurolens-textSecondary mb-3 uppercase tracking-wide">
             Per-Task Breakdown
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {reasoningComparison.tasks.map((task, i) => (
-              <div key={i} className="bg-dragonforge-bg/50 border border-dragonforge-border/50 rounded-panel p-3">
-                <p className="font-mono text-tiny text-dragonforge-textMuted mb-2">{task.name}</p>
+              <div key={i} className="bg-neurolens-bg/50 border border-neurolens-border/50 rounded-panel p-3">
+                <p className="font-mono text-tiny text-neurolens-textMuted mb-2">{task.name}</p>
                 <div className="grid grid-cols-2 gap-2 text-small">
                   <div>
-                    <span className="text-dragonforge-textMuted">BDH: </span>
-                    <span className="font-mono font-medium text-dragonforge-textPrimary">
+                    <span className="text-neurolens-textMuted">BDH: </span>
+                    <span className="font-mono font-medium text-neurolens-textPrimary">
                       {(task.bdh?.mean * 100).toFixed(1)}%
                     </span>
                   </div>
                   <div>
-                    <span className="text-dragonforge-textMuted">Trans: </span>
-                    <span className="font-mono font-medium text-dragonforge-textSecondary">
+                    <span className="text-neurolens-textMuted">Trans: </span>
+                    <span className="font-mono font-medium text-neurolens-textSecondary">
                       {(task.transformer?.mean * 100).toFixed(1)}%
                     </span>
                   </div>
-                  <div className="col-span-2 text-tiny text-dragonforge-textMuted">
+                  <div className="col-span-2 text-tiny text-neurolens-textMuted">
                     Seeds: {task.seeds?.join(', ') || 'N/A'}
                   </div>
                 </div>
@@ -118,12 +118,12 @@ export function PanelC_ReasoningBenchmark({ reasoningData, reasoningComparison }
       )}
       
       {/* Standardized multi-seed note */}
-      <div className="mt-4 pt-4 border-t border-dragonforge-border text-tiny text-dragonforge-textMuted">
+      <div className="mt-4 pt-4 border-t border-neurolens-border text-tiny text-neurolens-textMuted">
         <span className="font-mono">Standardized multi-seed mean values (n=3 seeds: 1, 2, 3)</span>
       </div>
       
       {!hasData && (
-        <div className="mt-4 p-3 bg-dragonforge-bg/50 border border-dragonforge-border/50 rounded-panel text-tiny text-dragonforge-textMuted">
+        <div className="mt-4 p-3 bg-neurolens-bg/50 border border-neurolens-border/50 rounded-panel text-tiny text-neurolens-textMuted">
           <span className="font-mono">[EXPLORATORY] </span>
           Showing representative benchmark data. Run long-context experiments to generate real results.
         </div>

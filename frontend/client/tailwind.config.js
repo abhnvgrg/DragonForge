@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        // DragonForge Monochromatic Palette
-        dragonforge: {
+        // NeuroLens Monochromatic Palette
+        neurolens: {
           // Background
           bg: '#09090B',           // Matte Black
           // Surfaces

@@ -1,7 +1,7 @@
 {
-  "name": "dragonforge-server",
+  "name": "neurolens-server",
   "version": "1.0.0",
-  "description": "DragonForge Backend API Server",
+  "description": "NeuroLens Backend API Server",
   "main": "index.js",
   "type": "module",
   "scripts": {

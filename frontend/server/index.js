@@ -57,7 +57,7 @@ app.use((req, res) => {
 
 // Global error handler
 app.use((err, req, res, next) => {
-  console.error('[DragonForge Server Error]:', err && err.stack ? err.stack : err);
+  console.error('[NeuroLens Server Error]:', err && err.stack ? err.stack : err);
   if (!res.headersSent) {
     res.status(err.status || 500).json({
       error: 'Internal server error',
@@ -67,7 +67,7 @@ app.use((err, req, res, next) => {
 });
 
 const server = app.listen(PORT, () => {
-  console.log(`DragonForge API server running on http://localhost:${PORT}`);
+  console.log(`NeuroLens API server running on http://localhost:${PORT}`);
   console.log(`Reading results from: ${RESULTS_DIR}`);
   console.log(`Reading config from: ${CONFIG_PATH}`);
 });

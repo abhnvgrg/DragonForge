@@ -27,54 +27,54 @@ export function PanelE_StructureBehavior({ structureData, continualData }) {
         <div className="flex items-center justify-center gap-3 flex-wrap mb-8">
           {/* Modularity Node */}
           <div className="text-center group">
-            <div className="bg-dragonforge-surface border border-dragonforge-border rounded-panel p-4 min-w-[140px] group-hover:border-dragonforge-borderHover transition-colors">
+            <div className="bg-neurolens-surface border border-neurolens-border rounded-panel p-4 min-w-[140px] group-hover:border-neurolens-borderHover transition-colors">
               <div className="flex items-center justify-center gap-2 mb-2">
-                <GitBranch className="w-5 h-5 text-dragonforge-textPrimary" />
-                <span className="font-mono text-small text-dragonforge-textMuted">MODULARITY</span>
+                <GitBranch className="w-5 h-5 text-neurolens-textPrimary" />
+                <span className="font-mono text-small text-neurolens-textMuted">MODULARITY</span>
               </div>
-              <div className="font-mono text-headline text-dragonforge-textPrimary">
+              <div className="font-mono text-headline text-neurolens-textPrimary">
                 {modularity.toFixed(2)}
               </div>
-              <div className="text-tiny text-dragonforge-textMuted">Louvain Q</div>
+              <div className="text-tiny text-neurolens-textMuted">Louvain Q</div>
             </div>
           </div>
           
-          <ArrowRight className="w-8 h-8 text-dragonforge-textMuted flex-shrink-0" />
+          <ArrowRight className="w-8 h-8 text-neurolens-textMuted flex-shrink-0" />
           
           {/* Sparse Activations Node */}
           <div className="text-center group">
-            <div className="bg-dragonforge-surface border border-dragonforge-border rounded-panel p-4 min-w-[160px] group-hover:border-dragonforge-borderHover transition-colors">
+            <div className="bg-neurolens-surface border border-neurolens-border rounded-panel p-4 min-w-[160px] group-hover:border-neurolens-borderHover transition-colors">
               <div className="flex items-center justify-center gap-2 mb-2">
-                <Zap className="w-5 h-5 text-dragonforge-textPrimary" />
-                <span className="font-mono text-small text-dragonforge-textMuted">SPARSE ACTIVATIONS</span>
+                <Zap className="w-5 h-5 text-neurolens-textPrimary" />
+                <span className="font-mono text-small text-neurolens-textMuted">SPARSE ACTIVATIONS</span>
               </div>
-              <div className="font-mono text-headline text-dragonforge-textPrimary">
+              <div className="font-mono text-headline text-neurolens-textPrimary">
                 {(sparsity * 100).toFixed(1)}%
               </div>
-              <div className="text-tiny text-dragonforge-textMuted">Activation Sparsity</div>
+              <div className="text-tiny text-neurolens-textMuted">Activation Sparsity</div>
             </div>
           </div>
           
-          <ArrowRight className="w-8 h-8 text-dragonforge-textMuted flex-shrink-0" />
+          <ArrowRight className="w-8 h-8 text-neurolens-textMuted flex-shrink-0" />
           
           {/* Reduced Interference Node */}
           <div className="text-center group">
-            <div className="bg-dragonforge-surface border border-dragonforge-border rounded-panel p-4 min-w-[160px] group-hover:border-dragonforge-borderHover transition-colors">
+            <div className="bg-neurolens-surface border border-neurolens-border rounded-panel p-4 min-w-[160px] group-hover:border-neurolens-borderHover transition-colors">
               <div className="flex items-center justify-center gap-2 mb-2">
                 <Link className="w-5 h-5 text-green-400" />
-                <span className="font-mono text-small text-dragonforge-textMuted">REDUCED INTERFERENCE</span>
+                <span className="font-mono text-small text-neurolens-textMuted">REDUCED INTERFERENCE</span>
               </div>
               <div className="font-mono text-headline text-green-400">
                 -{((transForgetting - forgetting) * 100).toFixed(1)}%
               </div>
-              <div className="text-tiny text-dragonforge-textMuted">Forgetting Delta vs Transformer</div>
+              <div className="text-tiny text-neurolens-textMuted">Forgetting Delta vs Transformer</div>
             </div>
           </div>
         </div>
         
         {/* Monospace Flow Labels */}
-        <div className="bg-dragonforge-bg/50 border border-dragonforge-border/50 rounded-panel p-4 mb-6 font-mono text-small">
-          <div className="flex items-center justify-center gap-4 flex-wrap text-dragonforge-textSecondary">
+        <div className="bg-neurolens-bg/50 border border-neurolens-border/50 rounded-panel p-4 mb-6 font-mono text-small">
+          <div className="flex items-center justify-center gap-4 flex-wrap text-neurolens-textSecondary">
             <span>[Modularity ↑]</span>
             <ArrowRight className="w-4 h-4" />
             <span>[Sparse Activations]</span>
@@ -87,33 +87,33 @@ export function PanelE_StructureBehavior({ structureData, continualData }) {
         
         {/* Correlation Evidence */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="bg-dragonforge-bg/50 border border-dragonforge-border rounded-panel p-4 text-center">
-            <div className="font-mono text-headline text-dragonforge-textPrimary mb-1">
+          <div className="bg-neurolens-bg/50 border border-neurolens-border rounded-panel p-4 text-center">
+            <div className="font-mono text-headline text-neurolens-textPrimary mb-1">
               {modularity.toFixed(2)}
             </div>
-            <div className="text-tiny text-dragonforge-textMuted">Graph Modularity (BDH)</div>
-            <div className="text-tiny text-dragonforge-textMuted mt-1">vs Control: {(structureData?.modularity_random_control || 0.22).toFixed(2)}</div>
+            <div className="text-tiny text-neurolens-textMuted">Graph Modularity (BDH)</div>
+            <div className="text-tiny text-neurolens-textMuted mt-1">vs Control: {(structureData?.modularity_random_control || 0.22).toFixed(2)}</div>
           </div>
           
-          <div className="bg-dragonforge-bg/50 border border-dragonforge-border rounded-panel p-4 text-center">
-            <div className="font-mono text-headline text-dragonforge-textPrimary mb-1">
+          <div className="bg-neurolens-bg/50 border border-neurolens-border rounded-panel p-4 text-center">
+            <div className="font-mono text-headline text-neurolens-textPrimary mb-1">
               {(sparsity * 100).toFixed(1)}%
             </div>
-            <div className="text-tiny text-dragonforge-textMuted">Activation Sparsity</div>
-            <div className="text-tiny text-dragonforge-textMuted mt-1">Heavy-tailed degree dist.</div>
+            <div className="text-tiny text-neurolens-textMuted">Activation Sparsity</div>
+            <div className="text-tiny text-neurolens-textMuted mt-1">Heavy-tailed degree dist.</div>
           </div>
           
-          <div className="bg-dragonforge-bg/50 border border-dragonforge-border rounded-panel p-4 text-center">
+          <div className="bg-neurolens-bg/50 border border-neurolens-border rounded-panel p-4 text-center">
             <div className="font-mono text-headline text-green-400 mb-1">
               -{((transForgetting - forgetting) * 100).toFixed(1)}%
             </div>
-            <div className="text-tiny text-dragonforge-textMuted">Forgetting Advantage</div>
-            <div className="text-tiny text-dragonforge-textMuted mt-1">BDH: {(forgetting * 100).toFixed(1)}% vs Trans: {(transForgetting * 100).toFixed(1)}%</div>
+            <div className="text-tiny text-neurolens-textMuted">Forgetting Advantage</div>
+            <div className="text-tiny text-neurolens-textMuted mt-1">BDH: {(forgetting * 100).toFixed(1)}% vs Trans: {(transForgetting * 100).toFixed(1)}%</div>
           </div>
         </div>
         
         {/* Research Note */}
-        <div className="mt-6 p-3 bg-dragonforge-bg/50 border border-dragonforge-border/50 rounded-panel text-tiny text-dragonforge-textMuted">
+        <div className="mt-6 p-3 bg-neurolens-bg/50 border border-neurolens-border/50 rounded-panel text-tiny text-neurolens-textMuted">
           <span className="font-mono">[EXPLORATORY] </span>
           Correlation observed across seeds; causality not established. 
           {"Modularity <-> forgetting correlation: r ≈ 0.62 (p < 0.05, n=3)."}

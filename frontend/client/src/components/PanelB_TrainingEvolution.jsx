@@ -83,19 +83,19 @@ export function PanelB_TrainingEvolution({ structureCheckpoints }) {
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-dragonforge-surface/95 backdrop-blur-md border border-dragonforge-border rounded-panel p-3.5 shadow-2xl min-w-[200px]">
-          <div className="flex items-center justify-between border-b border-dragonforge-border pb-1.5 mb-2">
-            <span className="font-mono text-tiny text-dragonforge-textMuted uppercase">Training Step</span>
+        <div className="bg-neurolens-surface/95 backdrop-blur-md border border-neurolens-border rounded-panel p-3.5 shadow-2xl min-w-[200px]">
+          <div className="flex items-center justify-between border-b border-neurolens-border pb-1.5 mb-2">
+            <span className="font-mono text-tiny text-neurolens-textMuted uppercase">Training Step</span>
             <span className="font-mono text-small font-bold text-white">{label.toLocaleString()}</span>
           </div>
           <div className="space-y-1.5">
             {payload.map((entry, index) => (
               <div key={index} className="flex items-center justify-between text-small font-mono">
-                <span className="flex items-center gap-2 text-dragonforge-textSecondary">
+                <span className="flex items-center gap-2 text-neurolens-textSecondary">
                   <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: entry.color }} />
                   {entry.name}:
                 </span>
-                <span className="font-semibold text-dragonforge-textPrimary">
+                <span className="font-semibold text-neurolens-textPrimary">
                   {typeof entry.value === 'number' ? entry.value.toFixed(3) : entry.value}
                 </span>
               </div>
@@ -119,7 +119,7 @@ export function PanelB_TrainingEvolution({ structureCheckpoints }) {
             </h2>
             <ClaimBadge tag={hasData ? 'MEASURED' : 'EXPLORATORY'} />
           </div>
-          <p className="panel-subtitle text-tiny text-dragonforge-textMuted mt-1">
+          <p className="panel-subtitle text-tiny text-neurolens-textMuted mt-1">
             Tracking modularity emergence, sparsity growth, and clustering across training steps
           </p>
         </div>
@@ -131,7 +131,7 @@ export function PanelB_TrainingEvolution({ structureCheckpoints }) {
             className={`px-2.5 py-1 rounded text-tiny font-mono flex items-center gap-1.5 transition-colors border ${
               visibleMetrics.modularity
                 ? 'bg-white/10 text-white border-white/30 font-semibold'
-                : 'bg-transparent text-dragonforge-textMuted border-dragonforge-border hover:text-dragonforge-textSecondary'
+                : 'bg-transparent text-neurolens-textMuted border-neurolens-border hover:text-neurolens-textSecondary'
             }`}
           >
             <span className="w-2 h-2 rounded-full bg-white" />
@@ -142,7 +142,7 @@ export function PanelB_TrainingEvolution({ structureCheckpoints }) {
             className={`px-2.5 py-1 rounded text-tiny font-mono flex items-center gap-1.5 transition-colors border ${
               visibleMetrics.modularityControl
                 ? 'bg-[#3F3F46]/30 text-zinc-300 border-zinc-500 font-semibold'
-                : 'bg-transparent text-dragonforge-textMuted border-dragonforge-border hover:text-dragonforge-textSecondary'
+                : 'bg-transparent text-neurolens-textMuted border-neurolens-border hover:text-neurolens-textSecondary'
             }`}
           >
             <span className="w-2 h-2 rounded-full bg-[#71717A]" />
@@ -153,7 +153,7 @@ export function PanelB_TrainingEvolution({ structureCheckpoints }) {
             className={`px-2.5 py-1 rounded text-tiny font-mono flex items-center gap-1.5 transition-colors border ${
               visibleMetrics.sparsity
                 ? 'bg-cyan-950/40 text-cyan-300 border-cyan-500/40 font-semibold'
-                : 'bg-transparent text-dragonforge-textMuted border-dragonforge-border hover:text-dragonforge-textSecondary'
+                : 'bg-transparent text-neurolens-textMuted border-neurolens-border hover:text-neurolens-textSecondary'
             }`}
           >
             <span className="w-2 h-2 rounded-full bg-cyan-400" />
@@ -164,7 +164,7 @@ export function PanelB_TrainingEvolution({ structureCheckpoints }) {
             className={`px-2.5 py-1 rounded text-tiny font-mono flex items-center gap-1.5 transition-colors border ${
               visibleMetrics.clustering
                 ? 'bg-amber-950/40 text-amber-300 border-amber-500/40 font-semibold'
-                : 'bg-transparent text-dragonforge-textMuted border-dragonforge-border hover:text-dragonforge-textSecondary'
+                : 'bg-transparent text-neurolens-textMuted border-neurolens-border hover:text-neurolens-textSecondary'
             }`}
           >
             <span className="w-2 h-2 rounded-full bg-amber-400" />
@@ -175,8 +175,8 @@ export function PanelB_TrainingEvolution({ structureCheckpoints }) {
 
       {/* Summary KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <div className="metric-card bg-dragonforge-surface/60 border border-dragonforge-border rounded-panel p-3">
-          <span className="metric-label text-tiny text-dragonforge-textMuted flex items-center gap-1.5">
+        <div className="metric-card bg-neurolens-surface/60 border border-neurolens-border rounded-panel p-3">
+          <span className="metric-label text-tiny text-neurolens-textMuted flex items-center gap-1.5">
             <Activity className="w-3.5 h-3.5 text-white" />
             Modularity Emergence
           </span>
@@ -188,11 +188,11 @@ export function PanelB_TrainingEvolution({ structureCheckpoints }) {
               +{modDelta >= 0 ? modDelta.toFixed(3) : '0.000'} Δ
             </span>
           </div>
-          <span className="text-[11px] text-dragonforge-textMuted">vs random control: {lastPoint.modularityControl?.toFixed(3)}</span>
+          <span className="text-[11px] text-neurolens-textMuted">vs random control: {lastPoint.modularityControl?.toFixed(3)}</span>
         </div>
 
-        <div className="metric-card bg-dragonforge-surface/60 border border-dragonforge-border rounded-panel p-3">
-          <span className="metric-label text-tiny text-dragonforge-textMuted flex items-center gap-1.5">
+        <div className="metric-card bg-neurolens-surface/60 border border-neurolens-border rounded-panel p-3">
+          <span className="metric-label text-tiny text-neurolens-textMuted flex items-center gap-1.5">
             <Layers className="w-3.5 h-3.5 text-cyan-400" />
             Activation Sparsity
           </span>
@@ -200,13 +200,13 @@ export function PanelB_TrainingEvolution({ structureCheckpoints }) {
             <span className="text-lg font-bold font-mono text-cyan-300">
               {sparsityFinal.toFixed(1)}%
             </span>
-            <span className="text-tiny text-dragonforge-textMuted font-mono">zero activations</span>
+            <span className="text-tiny text-neurolens-textMuted font-mono">zero activations</span>
           </div>
-          <span className="text-[11px] text-dragonforge-textMuted">Selective sparse activation pattern</span>
+          <span className="text-[11px] text-neurolens-textMuted">Selective sparse activation pattern</span>
         </div>
 
-        <div className="metric-card bg-dragonforge-surface/60 border border-dragonforge-border rounded-panel p-3">
-          <span className="metric-label text-tiny text-dragonforge-textMuted flex items-center gap-1.5">
+        <div className="metric-card bg-neurolens-surface/60 border border-neurolens-border rounded-panel p-3">
+          <span className="metric-label text-tiny text-neurolens-textMuted flex items-center gap-1.5">
             <Activity className="w-3.5 h-3.5 text-amber-400" />
             Clustering Coefficient
           </span>
@@ -214,14 +214,14 @@ export function PanelB_TrainingEvolution({ structureCheckpoints }) {
             <span className="text-lg font-bold font-mono text-amber-300">
               {clusteringFinal.toFixed(3)}
             </span>
-            <span className="text-tiny text-dragonforge-textMuted font-mono">local density</span>
+            <span className="text-tiny text-neurolens-textMuted font-mono">local density</span>
           </div>
-          <span className="text-[11px] text-dragonforge-textMuted">Dense intra-module community links</span>
+          <span className="text-[11px] text-neurolens-textMuted">Dense intra-module community links</span>
         </div>
       </div>
 
       {/* Chart Canvas */}
-      <div className="flex-1 w-full min-h-[340px] relative bg-dragonforge-bg/60 border border-dragonforge-border/60 rounded-panel p-2">
+      <div className="flex-1 w-full min-h-[340px] relative bg-neurolens-bg/60 border border-neurolens-border/60 rounded-panel p-2">
         <ResponsiveContainer width="100%" height="100%" minHeight={320}>
           <ComposedChart data={chartData} margin={{ top: 15, right: 30, left: 10, bottom: 20 }}>
             <defs>
@@ -321,7 +321,7 @@ export function PanelB_TrainingEvolution({ structureCheckpoints }) {
       </div>
 
       {/* Footer Info */}
-      <div className="flex items-center justify-between text-tiny text-dragonforge-textMuted border-t border-dragonforge-border pt-3 flex-wrap gap-2">
+      <div className="flex items-center justify-between text-tiny text-neurolens-textMuted border-t border-neurolens-border pt-3 flex-wrap gap-2">
         <div className="flex items-center gap-4">
           <span className="flex items-center gap-1.5">
             <span className="w-4 h-0.5 bg-white" />

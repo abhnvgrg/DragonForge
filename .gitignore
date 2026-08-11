@@ -119,8 +119,8 @@ dmypy.json
 *.pyd
 
 # Reference files
-README_BDH_pathways.txt
-DragonForge — Repo Structure & Te.txt
+README_BDH_pathways.md
+NeuroLens — Repo Structure & Te.txt
 structure.txt
 test_findings.md
 TODO.md

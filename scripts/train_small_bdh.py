@@ -1,7 +1,7 @@
 """
 Train Small BDH Model
 
-Script to train a small BDH model for DragonForge experiments.
+Script to train a small BDH model for NeuroLens experiments.
 """
 
 import torch

@@ -399,7 +399,7 @@ export function PanelA_NetworkTopology({
   return (
     <div className="panel h-[600px] md:h-[680px] flex flex-col gap-3 relative">
       {/* Panel Header */}
-      <div className="panel-header flex-wrap gap-3 pb-3 border-b border-dragonforge-border">
+      <div className="panel-header flex-wrap gap-3 pb-3 border-b border-neurolens-border">
         <div className="flex items-center gap-3">
           <h2 className="panel-title flex items-center gap-2 text-base sm:text-lg">
             <Share2 className="w-5 h-5 text-cyan-400" />
@@ -412,18 +412,18 @@ export function PanelA_NetworkTopology({
         <div className="flex items-center gap-3 flex-wrap">
           {/* Search box */}
           <div className="relative flex items-center">
-            <Search className="w-3.5 h-3.5 absolute left-2.5 text-dragonforge-textMuted" />
+            <Search className="w-3.5 h-3.5 absolute left-2.5 text-neurolens-textMuted" />
             <input
               type="text"
               placeholder="Search neuron..."
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              className="bg-dragonforge-surface/80 border border-dragonforge-border rounded-md pl-8 pr-3 py-1 text-tiny text-dragonforge-textPrimary font-mono placeholder:text-dragonforge-textMuted focus:outline-none focus:border-cyan-500 w-36 sm:w-44"
+              className="bg-neurolens-surface/80 border border-neurolens-border rounded-md pl-8 pr-3 py-1 text-tiny text-neurolens-textPrimary font-mono placeholder:text-neurolens-textMuted focus:outline-none focus:border-cyan-500 w-36 sm:w-44"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-2 text-dragonforge-textMuted hover:text-white"
+                className="absolute right-2 text-neurolens-textMuted hover:text-white"
               >
                 <X className="w-3 h-3" />
               </button>
@@ -431,7 +431,7 @@ export function PanelA_NetworkTopology({
           </div>
 
           {/* BDH vs Control Toggle */}
-          <div className="flex items-center gap-2 bg-dragonforge-surface/80 border border-dragonforge-border rounded-md px-2.5 py-1">
+          <div className="flex items-center gap-2 bg-neurolens-surface/80 border border-neurolens-border rounded-md px-2.5 py-1">
             <label className="toggle cursor-pointer" title="Switch between BDH and Control Transformer model topology">
               <input
                 type="checkbox"
@@ -443,15 +443,15 @@ export function PanelA_NetworkTopology({
                 <span className="toggle-thumb" />
               </span>
             </label>
-            <span className="text-tiny font-mono font-medium text-dragonforge-textPrimary">
-              {showControl ? 'Transformer Baseline' : 'BDH (DragonForge)'}
+            <span className="text-tiny font-mono font-medium text-neurolens-textPrimary">
+              {showControl ? 'Transformer Baseline' : 'BDH (NeuroLens)'}
             </span>
           </div>
         </div>
       </div>
 
       {/* Main Canvas & Sidebar Container */}
-      <div className="flex-1 flex overflow-hidden rounded-panel border border-dragonforge-border bg-[#09090B] relative">
+      <div className="flex-1 flex overflow-hidden rounded-panel border border-neurolens-border bg-[#09090B] relative">
         {/* Interactive Graph Canvas */}
         <div className="flex-1 relative overflow-hidden" ref={containerRef}>
           <svg
@@ -461,33 +461,33 @@ export function PanelA_NetworkTopology({
           />
 
           {/* Floating On-Canvas Controls (Top-Left) */}
-          <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-dragonforge-surface/90 backdrop-blur-md border border-dragonforge-border rounded-md p-1 shadow-lg z-10">
+          <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-neurolens-surface/90 backdrop-blur-md border border-neurolens-border rounded-md p-1 shadow-lg z-10">
             <button
               onClick={handleZoomIn}
-              className="p-1.5 rounded hover:bg-white/10 text-dragonforge-textSecondary hover:text-white transition-colors"
+              className="p-1.5 rounded hover:bg-white/10 text-neurolens-textSecondary hover:text-white transition-colors"
               title="Zoom In"
             >
               <ZoomIn className="w-4 h-4" />
             </button>
             <button
               onClick={handleZoomOut}
-              className="p-1.5 rounded hover:bg-white/10 text-dragonforge-textSecondary hover:text-white transition-colors"
+              className="p-1.5 rounded hover:bg-white/10 text-neurolens-textSecondary hover:text-white transition-colors"
               title="Zoom Out"
             >
               <ZoomOut className="w-4 h-4" />
             </button>
             <button
               onClick={handleResetView}
-              className="p-1.5 rounded hover:bg-white/10 text-dragonforge-textSecondary hover:text-white transition-colors"
+              className="p-1.5 rounded hover:bg-white/10 text-neurolens-textSecondary hover:text-white transition-colors"
               title="Reset View & Center"
             >
               <Crosshair className="w-4 h-4" />
             </button>
-            <div className="w-px h-4 bg-dragonforge-border mx-0.5" />
+            <div className="w-px h-4 bg-neurolens-border mx-0.5" />
             <button
               onClick={handleTogglePause}
               className={`p-1.5 rounded transition-colors ${
-                isPaused ? 'bg-amber-500/20 text-amber-300' : 'hover:bg-white/10 text-dragonforge-textSecondary hover:text-white'
+                isPaused ? 'bg-amber-500/20 text-amber-300' : 'hover:bg-white/10 text-neurolens-textSecondary hover:text-white'
               }`}
               title={isPaused ? 'Resume Physics' : 'Pause Physics'}
             >
@@ -495,7 +495,7 @@ export function PanelA_NetworkTopology({
             </button>
             <button
               onClick={handleReheatPhysics}
-              className="p-1.5 rounded hover:bg-white/10 text-dragonforge-textSecondary hover:text-amber-400 transition-colors"
+              className="p-1.5 rounded hover:bg-white/10 text-neurolens-textSecondary hover:text-amber-400 transition-colors"
               title="Re-heat Physics / Shake Layout"
             >
               <Zap className="w-4 h-4" />
@@ -503,9 +503,9 @@ export function PanelA_NetworkTopology({
           </div>
 
           {/* Floating Filter Controls (Top-Right) */}
-          <div className="absolute top-3 right-3 flex items-center gap-2 bg-dragonforge-surface/90 backdrop-blur-md border border-dragonforge-border rounded-md px-3 py-1.5 shadow-lg z-10 text-tiny font-mono">
+          <div className="absolute top-3 right-3 flex items-center gap-2 bg-neurolens-surface/90 backdrop-blur-md border border-neurolens-border rounded-md px-3 py-1.5 shadow-lg z-10 text-tiny font-mono">
             <Sliders className="w-3.5 h-3.5 text-cyan-400" />
-            <span className="text-dragonforge-textMuted">τ Threshold:</span>
+            <span className="text-neurolens-textMuted">τ Threshold:</span>
             <input
               type="range"
               min="0.2"
@@ -521,7 +521,7 @@ export function PanelA_NetworkTopology({
           {/* Interactive Floating Hover Tooltip */}
           {tooltip.visible && tooltip.node && (
             <div
-              className="absolute pointer-events-none z-30 bg-dragonforge-surface/95 backdrop-blur-md border border-dragonforge-border rounded-panel p-2.5 shadow-2xl text-tiny font-mono"
+              className="absolute pointer-events-none z-30 bg-neurolens-surface/95 backdrop-blur-md border border-neurolens-border rounded-panel p-2.5 shadow-2xl text-tiny font-mono"
               style={{
                 left: Math.min(tooltip.x + 12, (dimensions.width || 400) - 180),
                 top: Math.min(tooltip.y + 12, (dimensions.height || 400) - 130),
@@ -534,7 +534,7 @@ export function PanelA_NetworkTopology({
                 />
                 {tooltip.node.id}
               </div>
-              <div className="text-dragonforge-textMuted space-y-0.5">
+              <div className="text-neurolens-textMuted space-y-0.5">
                 <div>Community: <span className="text-white font-semibold">{tooltip.node.community}</span></div>
                 <div>Layer: <span className="text-white">{tooltip.node.layer || 'N/A'}</span></div>
                 <div>Connections: <span className="text-cyan-300 font-bold">{(neighborMap.get(tooltip.node.id) || []).length}</span></div>
@@ -544,8 +544,8 @@ export function PanelA_NetworkTopology({
           )}
 
           {/* Community Legend (Bottom-Left) */}
-          <div className="absolute bottom-3 left-3 flex flex-col gap-1.5 bg-dragonforge-surface/90 backdrop-blur-md border border-dragonforge-border rounded-md p-2.5 text-tiny z-10">
-            <span className="font-mono text-[10px] text-dragonforge-textMuted uppercase tracking-wider font-semibold">
+          <div className="absolute bottom-3 left-3 flex flex-col gap-1.5 bg-neurolens-surface/90 backdrop-blur-md border border-neurolens-border rounded-md p-2.5 text-tiny z-10">
+            <span className="font-mono text-[10px] text-neurolens-textMuted uppercase tracking-wider font-semibold">
               Communities ({communities.length})
             </span>
             <div className="flex items-center gap-1.5 flex-wrap">
@@ -554,7 +554,7 @@ export function PanelA_NetworkTopology({
                 className={`px-2 py-0.5 rounded text-[11px] font-mono transition-colors ${
                   communityFilter === 'all'
                     ? 'bg-white/20 text-white font-bold'
-                    : 'text-dragonforge-textMuted hover:text-white'
+                    : 'text-neurolens-textMuted hover:text-white'
                 }`}
               >
                 All
@@ -566,7 +566,7 @@ export function PanelA_NetworkTopology({
                   className={`flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-mono transition-colors ${
                     communityFilter === String(c)
                       ? 'bg-white/20 text-white font-bold'
-                      : 'text-dragonforge-textMuted hover:text-white'
+                      : 'text-neurolens-textMuted hover:text-white'
                   }`}
                 >
                   <span
@@ -581,7 +581,7 @@ export function PanelA_NetworkTopology({
         </div>
 
         {/* Sidebar: Metrics & Selected Node Inspector */}
-        <div className="w-80 border-l border-dragonforge-border bg-dragonforge-surface/40 backdrop-blur-sm p-4 overflow-y-auto flex flex-col gap-4 flex-shrink-0">
+        <div className="w-80 border-l border-neurolens-border bg-neurolens-surface/40 backdrop-blur-sm p-4 overflow-y-auto flex flex-col gap-4 flex-shrink-0">
           {/* Selected Node Details Drawer */}
           {selectedNode ? (
             <div className="bg-cyan-950/20 border border-cyan-500/30 rounded-panel p-3.5 space-y-3">
@@ -592,7 +592,7 @@ export function PanelA_NetworkTopology({
                 </span>
                 <button
                   onClick={() => setSelectedNode(null)}
-                  className="text-dragonforge-textMuted hover:text-white"
+                  className="text-neurolens-textMuted hover:text-white"
                   title="Close Inspector"
                 >
                   <X className="w-4 h-4" />
@@ -607,31 +607,31 @@ export function PanelA_NetworkTopology({
                   />
                   {selectedNode.id}
                 </div>
-                <div className="text-tiny text-dragonforge-textMuted">
+                <div className="text-tiny text-neurolens-textMuted">
                   Layer: <span className="text-white">{selectedNode.layer || 'N/A'}</span>
                 </div>
-                <div className="text-tiny text-dragonforge-textMuted">
+                <div className="text-tiny text-neurolens-textMuted">
                   Community: <span className="text-cyan-300 font-bold">Module {selectedNode.community}</span>
                 </div>
-                <div className="text-tiny text-dragonforge-textMuted">
+                <div className="text-tiny text-neurolens-textMuted">
                   Mean Activation: <span className="text-amber-300 font-bold">{(selectedNode.activation ?? 0.75).toFixed(3)}</span>
                 </div>
               </div>
 
               {/* Connected Neighbors List */}
-              <div className="pt-2 border-t border-dragonforge-border/60">
-                <span className="text-tiny font-mono text-dragonforge-textMuted uppercase block mb-1.5">
+              <div className="pt-2 border-t border-neurolens-border/60">
+                <span className="text-tiny font-mono text-neurolens-textMuted uppercase block mb-1.5">
                   Connected Neighbors ({selectedNeighbors.length})
                 </span>
                 {selectedNeighbors.length === 0 ? (
-                  <span className="text-tiny text-dragonforge-textMuted font-mono">No connections at τ ≥ {edgeThreshold.toFixed(2)}</span>
+                  <span className="text-tiny text-neurolens-textMuted font-mono">No connections at τ ≥ {edgeThreshold.toFixed(2)}</span>
                 ) : (
                   <div className="max-h-32 overflow-y-auto space-y-1 pr-1">
                     {selectedNeighbors.map(({ neighbor, weight }) => (
                       <button
                         key={neighbor}
                         onClick={() => handleSelectNeighbor(neighbor)}
-                        className="w-full flex items-center justify-between text-tiny font-mono bg-dragonforge-surface/60 hover:bg-cyan-500/20 px-2 py-1 rounded transition-colors text-left"
+                        className="w-full flex items-center justify-between text-tiny font-mono bg-neurolens-surface/60 hover:bg-cyan-500/20 px-2 py-1 rounded transition-colors text-left"
                       >
                         <span className="text-white font-medium">{neighbor}</span>
                         <span className="text-cyan-400 font-semibold">r = {weight.toFixed(2)}</span>
@@ -642,51 +642,51 @@ export function PanelA_NetworkTopology({
               </div>
             </div>
           ) : (
-            <div className="bg-dragonforge-surface/50 border border-dashed border-dragonforge-border rounded-panel p-3 text-center text-tiny text-dragonforge-textMuted font-mono">
+            <div className="bg-neurolens-surface/50 border border-dashed border-neurolens-border rounded-panel p-3 text-center text-tiny text-neurolens-textMuted font-mono">
               Click any neuron in the graph to inspect connections, weights, and community properties.
             </div>
           )}
 
           {/* Graph Overview KPIs */}
           <div className="space-y-3">
-            <h3 className="font-mono text-tiny font-semibold text-dragonforge-textSecondary uppercase tracking-wider">
+            <h3 className="font-mono text-tiny font-semibold text-neurolens-textSecondary uppercase tracking-wider">
               Network Properties
             </h3>
 
-            <div className="metric-card bg-dragonforge-surface/70 border border-dragonforge-border rounded-panel p-3">
-              <span className="metric-label text-tiny text-dragonforge-textMuted">Modularity Q</span>
+            <div className="metric-card bg-neurolens-surface/70 border border-neurolens-border rounded-panel p-3">
+              <span className="metric-label text-tiny text-neurolens-textMuted">Modularity Q</span>
               <div className="flex items-baseline gap-2 mt-1">
                 <span className="text-lg font-bold font-mono text-white">{Number(modularity).toFixed(3)}</span>
                 <span className="font-mono text-tiny text-emerald-400 font-semibold">
                   vs ctrl: {Number(modularityControl).toFixed(3)}
                 </span>
               </div>
-              <span className="text-[11px] text-dragonforge-textMuted">Louvain community partition</span>
+              <span className="text-[11px] text-neurolens-textMuted">Louvain community partition</span>
             </div>
 
-            <div className="metric-card bg-dragonforge-surface/70 border border-dragonforge-border rounded-panel p-3">
-              <span className="metric-label text-tiny text-dragonforge-textMuted">Activation Sparsity</span>
+            <div className="metric-card bg-neurolens-surface/70 border border-neurolens-border rounded-panel p-3">
+              <span className="metric-label text-tiny text-neurolens-textMuted">Activation Sparsity</span>
               <span className="text-lg font-bold font-mono text-cyan-300 mt-1 block">
                 {(Number(sparsity) * 100).toFixed(1)}%
               </span>
-              <span className="text-[11px] text-dragonforge-textMuted">Inactive unit fraction</span>
+              <span className="text-[11px] text-neurolens-textMuted">Inactive unit fraction</span>
             </div>
 
-            <div className="metric-card bg-dragonforge-surface/70 border border-dragonforge-border rounded-panel p-3">
-              <span className="metric-label text-tiny text-dragonforge-textMuted">Clustering Coefficient</span>
+            <div className="metric-card bg-neurolens-surface/70 border border-neurolens-border rounded-panel p-3">
+              <span className="metric-label text-tiny text-neurolens-textMuted">Clustering Coefficient</span>
               <span className="text-lg font-bold font-mono text-amber-300 mt-1 block">
                 {Number(clustering).toFixed(3)}
               </span>
-              <span className="text-[11px] text-dragonforge-textMuted">Mean local clustering</span>
+              <span className="text-[11px] text-neurolens-textMuted">Mean local clustering</span>
             </div>
 
-            <div className="metric-card bg-dragonforge-surface/70 border border-dragonforge-border rounded-panel p-3">
-              <span className="metric-label text-tiny text-dragonforge-textMuted">Graph Dimensions</span>
+            <div className="metric-card bg-neurolens-surface/70 border border-neurolens-border rounded-panel p-3">
+              <span className="metric-label text-tiny text-neurolens-textMuted">Graph Dimensions</span>
               <div className="flex items-center justify-between text-small font-mono text-white mt-1">
                 <span>{nodes.length} Nodes</span>
                 <span className="text-cyan-400">{links.length} Edges (active)</span>
               </div>
-              <span className="text-[11px] text-dragonforge-textMuted font-mono">
+              <span className="text-[11px] text-neurolens-textMuted font-mono">
                 {showControl ? 'Transformer dense' : 'BDH modular'}
               </span>
             </div>

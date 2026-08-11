@@ -1,5 +1,5 @@
 """
-DragonForge Dashboard
+NeuroLens Dashboard
 
 Streamlit-based interactive dashboard for visualizing structural metrics
 and experiment results from BDH and Transformer models.
@@ -19,7 +19,7 @@ import logging
 
 # Configure page
 st.set_page_config(
-    page_title="DragonForge Dashboard",
+    page_title="NeuroLens Dashboard",
     page_icon="🐉",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -36,7 +36,7 @@ class DashboardConfig:
     theme: str = "light"
 
 
-class DragonForgeDashboard:
+class NeuroLensDashboard:
     """Main dashboard application."""
     
     def __init__(self, config: DashboardConfig):
@@ -45,9 +45,9 @@ class DragonForgeDashboard:
     
     def run(self):
         """Run the dashboard."""
-        st.title("🐉 DragonForge: BDH Structural Analysis Dashboard")
+        st.title("🐉 NeuroLens: BDH Structural Analysis Dashboard")
         st.markdown("""
-        **DragonForge** instruments BDH (Dragon Hatchling) models to measure structural properties
+        **NeuroLens** instruments BDH (Dragon Hatchling) models to measure structural properties
         (sparsity, modularity, degree distribution) and connects them to behavioral outcomes
         in continual learning and long-context reasoning.
         """)
@@ -603,7 +603,7 @@ class DragonForgeDashboard:
 def main():
     """Main entry point for Streamlit dashboard."""
     config = DashboardConfig()
-    dashboard = DragonForgeDashboard(config)
+    dashboard = NeuroLensDashboard(config)
     dashboard.run()
 
 
