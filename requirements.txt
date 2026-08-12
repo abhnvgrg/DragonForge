@@ -33,7 +33,6 @@ wandb>=0.15.0
 tensorboard>=2.13.0
 
 # Configuration
-yaml>=0.2.0
 omegaconf>=2.3.0
 
 # Utilities

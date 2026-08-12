@@ -13,7 +13,7 @@ from .models import BDHLoader, TransformerBaseline
 from .instrumentation import GraphExtractor, StructuralMetrics, CheckpointManager
 from .experiments import ContinualLearningExperiment, LongContextExperiment
 from .visualization import GraphVisualizer, MetricsPlotter
-from .dashboard import DashboardApp
+from .dashboard import DashboardConfig, NeuroLensDashboard
 
 __all__ = [
     "BDHLoader",
@@ -25,5 +25,6 @@ __all__ = [
     "LongContextExperiment",
     "GraphVisualizer",
     "MetricsPlotter",
-    "DashboardApp",
+    "DashboardConfig",
+    "NeuroLensDashboard",
 ]
