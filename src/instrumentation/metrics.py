@@ -5,6 +5,7 @@ Computes sparsity, modularity, degree distribution, clustering,
 and other graph-theoretic measures for BDH and Transformer models.
 """
 
+import torch
 import numpy as np
 import networkx as nx
 from typing import Dict, List, Optional, Tuple, Any, Union

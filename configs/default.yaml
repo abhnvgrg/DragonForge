@@ -1,4 +1,4 @@
-# DragonForge Default Configuration
+# NeuroLens Default Configuration
 # Model + Experiment Configs
 
 # ============================================================
@@ -177,7 +177,7 @@ logging:
   # Weights & Biases
   wandb:
     enabled: false
-    project: "dragonforge"
+    project: "neurolens"
     entity: null
     tags: ["bdh", "instrumentation", "continual-learning", "long-context"]
   # TensorBoard

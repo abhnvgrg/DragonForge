@@ -1,4 +1,4 @@
-# DragonForge Technical Documentation
+# NeuroLens Technical Documentation
 
 ## Deep Technical Reference for Internal Workings
 
@@ -24,7 +24,7 @@
 
 ### High-Level Design
 
-DragonForge follows a modular pipeline architecture:
+NeuroLens follows a modular pipeline architecture:
 
 ```
 ┌─────────────┐     ┌──────────────────┐     ┌─────────────────────┐

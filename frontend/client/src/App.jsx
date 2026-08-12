@@ -72,21 +72,21 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-dragonforge-bg text-dragonforge-textPrimary flex flex-col font-sans">
+    <div className="min-h-screen bg-neurolens-bg text-neurolens-textPrimary flex flex-col font-sans">
       <TopNav modelConfig={modelConfig} onExport={handleExportData} />
 
       {/* Main Container */}
       <main className="flex-1 max-w-[1600px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-6">
         
         {/* Navigation Tabs & Refresh */}
-        <div className="flex items-center justify-between border-b border-dragonforge-border pb-2 flex-wrap gap-4">
+        <div className="flex items-center justify-between border-b border-neurolens-border pb-2 flex-wrap gap-4">
           <div className="flex gap-2">
             <button
               onClick={() => setActiveTab('inspect')}
               className={`px-4 py-2 font-mono text-small transition-all ${
                 activeTab === 'inspect'
-                  ? 'border-b-2 border-white text-dragonforge-textPrimary font-semibold'
-                  : 'text-dragonforge-textSecondary hover:text-dragonforge-textPrimary'
+                  ? 'border-b-2 border-white text-neurolens-textPrimary font-semibold'
+                  : 'text-neurolens-textSecondary hover:text-neurolens-textPrimary'
               }`}
             >
               INSPECT VIEW (A)
@@ -95,8 +95,8 @@ export default function App() {
               onClick={() => setActiveTab('track')}
               className={`px-4 py-2 font-mono text-small transition-all ${
                 activeTab === 'track'
-                  ? 'border-b-2 border-white text-dragonforge-textPrimary font-semibold'
-                  : 'text-dragonforge-textSecondary hover:text-dragonforge-textPrimary'
+                  ? 'border-b-2 border-white text-neurolens-textPrimary font-semibold'
+                  : 'text-neurolens-textSecondary hover:text-neurolens-textPrimary'
               }`}
             >
               TRACK VIEW (B)
@@ -105,8 +105,8 @@ export default function App() {
               onClick={() => setActiveTab('test')}
               className={`px-4 py-2 font-mono text-small transition-all ${
                 activeTab === 'test'
-                  ? 'border-b-2 border-white text-dragonforge-textPrimary font-semibold'
-                  : 'text-dragonforge-textSecondary hover:text-dragonforge-textPrimary'
+                  ? 'border-b-2 border-white text-neurolens-textPrimary font-semibold'
+                  : 'text-neurolens-textSecondary hover:text-neurolens-textPrimary'
               }`}
             >
               TEST VIEW (C, D)
@@ -115,8 +115,8 @@ export default function App() {
               onClick={() => setActiveTab('connect')}
               className={`px-4 py-2 font-mono text-small transition-all ${
                 activeTab === 'connect'
-                  ? 'border-b-2 border-white text-dragonforge-textPrimary font-semibold'
-                  : 'text-dragonforge-textSecondary hover:text-dragonforge-textPrimary'
+                  ? 'border-b-2 border-white text-neurolens-textPrimary font-semibold'
+                  : 'text-neurolens-textSecondary hover:text-neurolens-textPrimary'
               }`}
             >
               CONNECT PANEL (E)

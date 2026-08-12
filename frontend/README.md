@@ -1,4 +1,4 @@
-# Running DragonForge Dashboard & API Server
+# Running NeuroLens Dashboard & API Server
 
 This folder contains the complete monochromatic research dashboard frontend and backend.
 

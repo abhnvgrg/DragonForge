@@ -1,5 +1,5 @@
 """
-Plotting Utilities for DragonForge
+Plotting Utilities for NeuroLens
 
 Static plots for structural metrics, experiment results, and comparisons.
 """

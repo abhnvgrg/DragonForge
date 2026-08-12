@@ -4,7 +4,7 @@
 
 @layer base {
   * {
-    @apply border-dragonforge-border;
+    @apply border-neurolens-border;
   }
   
   html {
@@ -12,7 +12,7 @@
   }
   
   body {
-    @apply bg-dragonforge-bg text-dragonforge-textPrimary font-sans;
+    @apply bg-neurolens-bg text-neurolens-textPrimary font-sans;
   }
   
   /* Custom scrollbar */
@@ -22,22 +22,22 @@
   }
   
   ::-webkit-scrollbar-track {
-    @apply bg-dragonforge-bg;
+    @apply bg-neurolens-bg;
   }
   
   ::-webkit-scrollbar-thumb {
-    @apply bg-dragonforge-border rounded-full;
+    @apply bg-neurolens-border rounded-full;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-dragonforge-borderHover;
+    @apply bg-neurolens-borderHover;
   }
 }
 
 @layer components {
   /* Panel base style */
   .panel {
-    @apply bg-dragonforge-surface border border-dragonforge-border rounded-panel p-panel shadow-panel transition-shadow duration-200;
+    @apply bg-neurolens-surface border border-neurolens-border rounded-panel p-panel shadow-panel transition-shadow duration-200;
   }
   
   .panel:hover {
@@ -46,15 +46,15 @@
   
   /* Panel header */
   .panel-header {
-    @apply flex items-center justify-between mb-4 pb-3 border-b border-dragonforge-border;
+    @apply flex items-center justify-between mb-4 pb-3 border-b border-neurolens-border;
   }
   
   .panel-title {
-    @apply font-mono text-title font-medium text-dragonforge-textPrimary;
+    @apply font-mono text-title font-medium text-neurolens-textPrimary;
   }
   
   .panel-subtitle {
-    @apply text-small text-dragonforge-textSecondary font-normal;
+    @apply text-small text-neurolens-textSecondary font-normal;
   }
   
   /* Badge styles */
@@ -63,15 +63,15 @@
   }
   
   .badge-established {
-    @apply bg-dragonforge-badgeEstablished text-dragonforge-badgeEstablishedText;
+    @apply bg-neurolens-badgeEstablished text-neurolens-badgeEstablishedText;
   }
   
   .badge-measured {
-    @apply bg-dragonforge-badgeMeasured text-dragonforge-badgeMeasuredText;
+    @apply bg-neurolens-badgeMeasured text-neurolens-badgeMeasuredText;
   }
   
   .badge-exploratory {
-    @apply bg-dragonforge-badgeExploratory border border-dragonforge-badgeExploratoryBorder border-dashed text-dragonforge-textPrimary;
+    @apply bg-neurolens-badgeExploratory border border-neurolens-badgeExploratoryBorder border-dashed text-neurolens-textPrimary;
   }
   
   /* Metric card */
@@ -80,11 +80,11 @@
   }
   
   .metric-label {
-    @apply text-tiny text-dragonforge-textMuted font-medium uppercase tracking-wide;
+    @apply text-tiny text-neurolens-textMuted font-medium uppercase tracking-wide;
   }
   
   .metric-value {
-    @apply text-headline font-mono font-semibold text-dragonforge-textPrimary;
+    @apply text-headline font-mono font-semibold text-neurolens-textPrimary;
   }
   
   .metric-diff {
@@ -100,7 +100,7 @@
   }
   
   .metric-diff-neutral {
-    @apply text-dragonforge-textSecondary;
+    @apply text-neurolens-textSecondary;
   }
   
   /* Table styles */
@@ -109,11 +109,11 @@
   }
   
   .data-table th {
-    @apply text-left py-2 px-3 font-medium text-dragonforge-textSecondary border-b border-dragonforge-border uppercase tracking-wide text-tiny;
+    @apply text-left py-2 px-3 font-medium text-neurolens-textSecondary border-b border-neurolens-border uppercase tracking-wide text-tiny;
   }
   
   .data-table td {
-    @apply py-2 px-3 border-b border-dragonforge-border/50;
+    @apply py-2 px-3 border-b border-neurolens-border/50;
   }
   
   .data-table tr:last-child td {
@@ -121,7 +121,7 @@
   }
   
   .data-table tbody tr:hover {
-    @apply bg-dragonforge-surfaceHover;
+    @apply bg-neurolens-surfaceHover;
   }
   
   .data-table .mono {
@@ -130,19 +130,19 @@
   
   /* Button styles */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-panel text-small font-medium transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-dragonforge-borderHover focus:ring-offset-2 focus:ring-offset-dragonforge-bg;
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-panel text-small font-medium transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-neurolens-borderHover focus:ring-offset-2 focus:ring-offset-neurolens-bg;
   }
   
   .btn-primary {
-    @apply btn bg-dragonforge-textPrimary text-dragonforge-bg hover:bg-dragonforge-textSecondary;
+    @apply btn bg-neurolens-textPrimary text-neurolens-bg hover:bg-neurolens-textSecondary;
   }
   
   .btn-secondary {
-    @apply btn border border-dragonforge-border bg-transparent text-dragonforge-textPrimary hover:bg-dragonforge-surfaceHover;
+    @apply btn border border-neurolens-border bg-transparent text-neurolens-textPrimary hover:bg-neurolens-surfaceHover;
   }
   
   .btn-ghost {
-    @apply btn bg-transparent text-dragonforge-textSecondary hover:text-dragonforge-textPrimary;
+    @apply btn bg-transparent text-neurolens-textSecondary hover:text-neurolens-textPrimary;
   }
   
   /* Toggle switch */
@@ -155,19 +155,19 @@
   }
   
   .toggle-track {
-    @apply h-4 w-8 rounded-full bg-dragonforge-border transition-colors;
+    @apply h-4 w-8 rounded-full bg-neurolens-border transition-colors;
   }
   
   .toggle-thumb {
-    @apply h-3.5 w-3.5 rounded-full bg-dragonforge-textPrimary shadow-panel transition-transform duration-150;
+    @apply h-3.5 w-3.5 rounded-full bg-neurolens-textPrimary shadow-panel transition-transform duration-150;
   }
   
   .toggle input:checked + .toggle-track {
-    @apply bg-dragonforge-textPrimary;
+    @apply bg-neurolens-textPrimary;
   }
   
   .toggle input:checked + .toggle-track .toggle-thumb {
-    @apply transform translate-x-5 bg-dragonforge-bg;
+    @apply transform translate-x-5 bg-neurolens-bg;
   }
   
   /* Collapsible */
@@ -181,7 +181,7 @@
   
   /* Tooltip */
   .tooltip {
-    @apply absolute z-50 px-3 py-2 text-tiny font-mono bg-dragonforge-surface border border-dragonforge-border rounded-panel shadow-panel pointer-events-none;
+    @apply absolute z-50 px-3 py-2 text-tiny font-mono bg-neurolens-surface border border-neurolens-border rounded-panel shadow-panel pointer-events-none;
   }
 }
 
@@ -215,35 +215,35 @@
 }
 
 .recharts-default-tooltip {
-  @apply bg-dragonforge-surface border border-dragonforge-border rounded-panel shadow-panel p-3 !important;
+  @apply bg-neurolens-surface border border-neurolens-border rounded-panel shadow-panel p-3 !important;
 }
 
 .recharts-tooltip-label {
-  @apply text-tiny text-dragonforge-textMuted font-medium uppercase tracking-wide !important;
+  @apply text-tiny text-neurolens-textMuted font-medium uppercase tracking-wide !important;
 }
 
 .recharts-tooltip-item {
-  @apply text-small font-mono text-dragonforge-textPrimary !important;
+  @apply text-small font-mono text-neurolens-textPrimary !important;
 }
 
 .recharts-legend-item-text {
-  @apply text-small text-dragonforge-textSecondary !important;
+  @apply text-small text-neurolens-textSecondary !important;
 }
 
 .recharts-cartesian-grid-horizontal line,
 .recharts-cartesian-grid-vertical line {
-  @apply stroke-dragonforge-border/50 !important;
+  @apply stroke-neurolens-border/50 !important;
 }
 
 .recharts-cartesian-axis-tick line {
-  @apply stroke-dragonforge-border !important;
+  @apply stroke-neurolens-border !important;
 }
 
 .recharts-cartesian-axis-tick text {
-  @apply fill-dragonforge-textMuted text-tiny !important;
+  @apply fill-neurolens-textMuted text-tiny !important;
 }
 
 .recharts-reference-line line {
-  @apply stroke-dragonforge-border/30 !important;
+  @apply stroke-neurolens-border/30 !important;
   stroke-dasharray: 4 4;
 }

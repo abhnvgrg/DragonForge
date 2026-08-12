@@ -1,5 +1,5 @@
 """
-Checkpoint Utilities for DragonForge
+Checkpoint Utilities for NeuroLens
 
 Handles saving/loading model checkpoints with instrumentation data,
 experiment results, and structural metrics.
