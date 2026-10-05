@@ -1,4 +1,15 @@
-# NeuroLens
+# DragonForge
+
+DragonForge is being built as a secure, modular market-analysis, research, charting, and decision-support platform. It is not a broker or trading bot and contains no order execution.
+
+The current product foundation is in [platform_api](platform_api/README.md): a FastAPI service, PostgreSQL schema and migrations, owner bootstrap, authentication/2FA foundations, owner setup controls, and a React owner console. This is Phase 1 work, not a production-ready launch; public member registration and market-data integrations intentionally remain disabled/unconfigured.
+
+To run the platform API and client locally, follow the setup in [platform_api/README.md](platform_api/README.md).
+
+## Existing BDH research project
+
+The repository also retains its earlier NeuroLens research dashboard and BDH experiment code. Its results are research artifacts, not DragonForge financial-market analysis or live market data.
+The legacy BDH experiment scripts depend on model adapters that are not present in this checkout; they are separate from the active DragonForge platform.
 
 **One-sentence claim:**  
 We instrument a real small BDH (Dragon Hatchling) model, measure its internal interaction structure, and connect those measurements to controlled experiments on continual learning and long-context reasoning.
@@ -36,9 +47,6 @@ DragonForge
 ├── OFFICIAL BDH
 │   └── bdh/                         # Official BDH core implementation
 │
-├── MODEL LAYER
-│   └── src/models/                  # Model loaders & architecture baselines
-│
 ├── INSTRUMENTATION
 │   └── src/instrumentation/        # Network instrumentation framework
 │
@@ -52,7 +60,7 @@ DragonForge
 │   └── src/instrumentation/graph_extractor.py # Graph extractor implementation
 │
 ├── DASHBOARD
-│   └── frontend/                   # React client and Express results server
+│   └── frontend/                   # DragonForge owner console; legacy results API
 │
 ├── TRAINING
 │   └── scripts/                    # Training and experiment runner scripts
@@ -65,23 +73,7 @@ DragonForge
 
 ## How to Run
 
-```bash
-# 1. Setup
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-
-# 2. Run structural instrumentation
-python scripts/extract_and_measure.py
-
-# 3. Run experiments
-python -m src.experiments.continual_learning
-python -m src.experiments.long_context
-
-# 4. Launch dashboard
-cd frontend/server && npm start      # results API on :3001
-cd frontend/client && npm run dev    # dashboard on :5173
-```
+The active DragonForge owner console and API setup are documented in [platform_api/README.md](platform_api/README.md). The old NeuroLens results server is separate and documented in [frontend/README.md](frontend/README.md); it is not the backend for the DragonForge console.
 
 ## Proof
 
